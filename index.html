@@ -9,6 +9,21 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+   <!-- Inclure jQuery -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <!-- Inclure jQuery UI -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+   <script>
+       // Attendre que le document soit prêt
+       $(document).ready(function () {
+           // Activer le datepicker sur l'élément avec la classe "datepicker"
+           $(".datepicker").datepicker({
+               dateFormat: "yy-mm-dd" // Format de la date
+           });
+       });
+   </script>
+
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -63,7 +78,7 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto " href="#hero">Accueil</a></li>
-          <li><a class="nav-link scrollto" href="#about">A propos de CIMBBAA</a></li>
+          <li><a class="nav-link scrollto" href="#about">A propos de CIMBBA</a></li>
           <li><a class="nav-link scrollto" href="#services">Nos services</a></li>
           <li><a class="nav-link scrollto" href="#departments">Nos départements</a></li>
           <li><a class="nav-link scrollto" href="#doctors">Nos médecins</a></li>
@@ -370,30 +385,31 @@
         <form action="forms/appointment.php" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
           <div class="row">
             <div class="col-md-4 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              <input type="text" name="name" class="form-control" id="name" placeholder="Nom et prénoms" required>
             </div>
             <div class="col-md-4 form-group mt-3 mt-md-0">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              <input type="email" class="form-control" name="email" id="email" placeholder="Adressse mail" required>
             </div>
             <div class="col-md-4 form-group mt-3 mt-md-0">
-              <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone" required>
+              <input type="tel" class="form-control" name="phone" id="phone" placeholder="Numéro de télephone" required>
             </div>
           </div>
           <div class="row">
             <div class="col-md-4 form-group mt-3">
-              <input type="datetime" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" required>
+              <input type="text" name="date" class="form-control datepicker" id="date" placeholder="Date du rendez-vous" required>
             </div>
             <div class="col-md-4 form-group mt-3">
               <select name="department" id="department" class="form-select">
-                <option value="">Select Department</option>
-                <option value="Department 1">Department 1</option>
-                <option value="Department 2">Department 2</option>
-                <option value="Department 3">Department 3</option>
+                <option value="">Choisir le départemnt</option>
+                <option value="Department 1">Department de radiologie</option>
+                <option value="Department 2">Department d'échographie</option>
+                <option value="Department 3">Department de rhumatologie</option>
+                <option value="Department 3">Department d'électrocardiogrammes</option>
               </select>
             </div>
             <div class="col-md-4 form-group mt-3">
               <select name="doctor" id="doctor" class="form-select">
-                <option value="">Select Doctor</option>
+                <option value="">Choisirvotre docteur</option>
                 <option value="Doctor 1">Doctor 1</option>
                 <option value="Doctor 2">Doctor 2</option>
                 <option value="Doctor 3">Doctor 3</option>
@@ -402,14 +418,14 @@
           </div>
 
           <div class="form-group mt-3">
-            <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
+            <textarea class="form-control" name="message" rows="5" placeholder="Expliquez nous le moftif du rendez-vous (Facultatif)"></textarea>
           </div>
           <div class="my-3">
-            <div class="loading">Loading</div>
+            <div class="loading">En cours</div>
             <div class="error-message"></div>
-            <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
+            <div class="sent-message">Votre demande de rendez-vous a été envoyée avec succès. Merci!</div>
           </div>
-          <div class="text-center"><button type="submit">Make an Appointment</button></div>
+          <div class="text-center"><button type="submit">Valider mon rendez-vous</button></div>
         </form>
 
       </div>
@@ -420,7 +436,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Departments</h2>
+          <h2>Départments</h2>
           <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
@@ -429,26 +445,26 @@
             <ul class="nav nav-tabs flex-column">
               <li class="nav-item">
                 <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
-                  <h4>Cardiology</h4>
-                  <p>Quis excepturi porro totam sint earum quo nulla perspiciatis eius.</p>
+                  <h4>Cardiologie</h4>
+                  <p>La cardiologie est la branche de la médecine qui traite des maladies du cœur et des vaisseaux sanguins.</p>
                 </a>
               </li>
               <li class="nav-item mt-2">
                 <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
-                  <h4>Neurology</h4>
-                  <p>Voluptas vel esse repudiandae quo excepturi.</p>
+                  <h4>Neurologie</h4>
+                  <p>La neurologie est la discipline médicale qui se concentre sur le diagnostic et le traitement des troubles du système nerveux.</p>
                 </a>
               </li>
               <li class="nav-item mt-2">
                 <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
-                  <h4>Hepatology</h4>
-                  <p>Velit veniam ipsa sit nihil blanditiis mollitia natus.</p>
+                  <h4>Rhumatologie</h4>
+                  <p>L'hépatologie est la spécialité médicale qui étudie et traite les maladies du foie, de la vésicule biliaire et des voies biliaires.</p>
                 </a>
               </li>
               <li class="nav-item mt-2">
                 <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
-                  <h4>Pediatrics</h4>
-                  <p>Ratione hic sapiente nostrum doloremque illum nulla praesentium id</p>
+                  <h4>Pédiatrie</h4>
+                  <p>La pédiatrie est la branche de la médecine qui se concentre sur la santé et le bien-être des enfants, depuis la naissance jusqu'à l'adolescence.</p>
                 </a>
               </li>
             </ul>
@@ -456,28 +472,51 @@
           <div class="col-lg-8">
             <div class="tab-content">
               <div class="tab-pane active show" id="tab-1">
-                <h3>Cardiology</h3>
-                <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
+                <h3>Cardiologie</h3>
+                <p class="fst-italic">La cardiologie est la branche de la médecine qui se consacre à l'étude, au diagnostic et au traitement des maladies du cœur et des vaisseaux sanguins.</p>
                 <img src="assets/img/departments-1.jpg" alt="" class="img-fluid">
-                <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                <p>Les cardiologues sont des spécialistes qualifiés dans la prise en charge des affections cardiovasculaires, 
+                  telles que l'angine de poitrine, l'infarctus du myocarde, l'hypertension artérielle, les arythmies cardiaques, 
+                  les malformations cardiaques congénitales et l'insuffisance cardiaque. En utilisant des techniques sophistiquées telles 
+                  que l'électrocardiographie (ECG), l'échocardiographie, la coronarographie et l'imagerie par résonance magnétique cardiaque, 
+                  les cardiologues sont en mesure d'évaluer la structure et la fonction du cœur, d'identifier les anomalies et de recommander 
+                  des traitements appropriés, y compris des médicaments, des interventions chirurgicales et des programmes de réadaptation 
+                  cardiaque. En outre, les cardiologues jouent un rôle essentiel dans la promotion de modes de vie sains et la prévention 
+                  des maladies cardiovasculaires en conseillant leurs patients sur l'exercice, la nutrition et la gestion du stress.
+                </p>
               </div>
               <div class="tab-pane" id="tab-2">
-                <h3>Neurology</h3>
-                <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
+                <h3>Neurologie</h3>
+                <p class="fst-italic">La neurologie est une spécialité médicale axée sur l'étude et le traitement des troubles du système nerveux central et périphérique.</p>
                 <img src="assets/img/departments-2.jpg" alt="" class="img-fluid">
-                <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                <p> Les neurologues sont formés pour diagnostiquer et gérer un large éventail de conditions neurologiques, notamment les maladies dégénératives telles 
+                  que la maladie d'Alzheimer et la maladie de Parkinson, les troubles épileptiques, les accidents vasculaires cérébraux, les maux de tête 
+                  chroniques, les troubles du sommeil, les tumeurs cérébrales et les blessures à la moelle épinière. Grâce à des techniques avancées 
+                  d'imagerie cérébrale, de tests neurophysiologiques et de consultations spécialisées, les neurologues sont en mesure d'offrir des soins 
+                  précis et personnalisés à leurs patients, tout en travaillant souvent en collaboration avec d'autres spécialistes, tels que les 
+                  neurochirurgiens et les physiothérapeutes, pour assurer une approche globale et intégrée du traitement.</p>
               </div>
               <div class="tab-pane" id="tab-3">
-                <h3>Hepatology</h3>
-                <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
+                <h3>Rhumatologie</h3>
+                <p class="fst-italic">La rhumatologie est une spécialité médicale qui se concentre sur le diagnostic et le traitement des maladies et des troubles affectant les articulations, les os, les muscles et les tissus conjonctifs.</p>
                 <img src="assets/img/departments-3.jpg" alt="" class="img-fluid">
-                <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                <p>Les rhumatologues sont des médecins spécialisés dans la gestion des affections telles que l'arthrite rhumatoïde, 
+                  l'ostéoarthrite, la spondylarthrite ankylosante, le lupus érythémateux systémique, la fibromyalgie, 
+                  la goutte et d'autres formes d'arthrite inflammatoire ou auto-immune. Ils utilisent une combinaison d'examens cliniques, 
+                  d'imagerie médicale, de tests sanguins et parfois de biopsies pour évaluer les symptômes et établir un plan de traitement 
+                  adapté à chaque patient. En plus de la gestion médicamenteuse, les rhumatologues peuvent recommander des thérapies physiques,
+                   des exercices et des changements de mode de vie pour aider à réduire la douleur, 
+                  à améliorer la mobilité et à prévenir les complications à long terme des maladies rhumatismales.</p>
               </div>
               <div class="tab-pane" id="tab-4">
-                <h3>Pediatrics</h3>
-                <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
+                <h3>Pédiatrie</h3>
+                <p class="fst-italic">La pédiatrie est une spécialité médicale dédiée à la santé et au bien-être des nourrissons, des enfants et des adolescents.</p>
                 <img src="assets/img/departments-4.jpg" alt="" class="img-fluid">
-                <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                <p>Les pédiatres sont formés pour diagnostiquer, traiter et prévenir une large gamme de problèmes de santé spécifiques à ces groupes d'âge. 
+                  Leur expertise couvre des domaines tels que le développement physique et mental, les maladies infantiles courantes, les vaccinations, 
+                  les troubles du comportement et de l'apprentissage, ainsi que les problèmes de croissance et de développement. En collaborant étroitement 
+                  avec les parents et les tuteurs légaux, les pédiatres s'efforcent de fournir des soins complets et holistiques aux jeunes patients, 
+                  en mettant l'accent sur la promotion d'un mode de vie sain dès le plus jeune âge.</p>
               </div>
             </div>
           </div>
@@ -491,8 +530,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Testimonials</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Avis de certains patients</h2>
+          <p></p>
         </div>
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -502,12 +541,12 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  Je suis très reconnaissant envers l'équipe de pédiatrie pour leur attention et leur dévouement envers mon enfant. Ils ont su instaurer un climat de confiance, ce qui a facilité le processus de traitement. Je recommande vivement ce service à tous les parents."
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
                 <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
+                <h3>KOFFI KONAN</h3>
+                <h4>Patient &amp;</h4>
               </div>
             </div><!-- End testimonial item -->
 
@@ -515,12 +554,12 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  La clinique CIMBBA dispose d'équipements modernes et de technologies de pointe, ce qui m'a donné confiance dans les soins que j'ai reçus. De plus, les espaces sont aménagés de manière à offrir un maximum de confort aux patients, ce qui rend les visites beaucoup plus agréables.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <h3>SONIA KOUASSI</h3>
+                <h4>Patiente</h4>
               </div>
             </div><!-- End testimonial item -->
 
@@ -528,12 +567,12 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  Travailler à CIMBBA est une expérience enrichissante. L'équipe est composée de professionnels dévoués et compétents, ce qui favorise un apprentissage continu et une croissance professionnelle. La clinique offre également d'excellentes possibilités de formation et de développement.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
                 <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
+                <h3>MOHAMED SIDIBE</h3>
+                <h4>personel</h4>
               </div>
             </div><!-- End testimonial item -->
 
@@ -541,12 +580,12 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  Je suis très satisfait des soins que j'ai reçus en cardiologie. L'équipe médicale a été très professionnelle et empathique tout au long de mon parcours de traitement. Grâce à leur expertise, j'ai pu retrouver une meilleure qualité de vie. Je recommande fortement ce service à quiconque a des problèmes cardiaques.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
                 <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
                 <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
+                <h4>Patient</h4>
               </div>
             </div><!-- End testimonial item -->
 
@@ -554,12 +593,12 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                  Notre partenariat avec le Centre Médical-Biologique de Grand-Bassam a été extrêmement fructueux. Leur équipe est professionnelle, bien organisée et toujours prête à collaborer pour offrir des soins de qualité à nos patients communs. C'est un plaisir de travailler avec une clinique aussi engagée et soucieuse du bien-être des patients.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
                 <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
+                <h4>Partenaire AXA</h4>
               </div>
             </div><!-- End testimonial item -->
 
@@ -575,8 +614,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Doctors</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Nos Médecins</h2>
+          <p>Les Médecins qui participent au bien bien-êtrede tous nos patients.</p>
         </div>
 
         <div class="row">
@@ -664,7 +703,7 @@
 
         <div class="section-title">
           <h2>Gallery</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Cetaines images des moments fort de CIMBBA.</p>
         </div>
 
         <div class="gallery-slider swiper">
