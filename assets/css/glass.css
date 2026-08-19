@@ -1,0 +1,221 @@
+/*--------------------------------------------------------------
+# CIMBBA — Liquid Glass Theme
+# Overrides de style.css : bordures arrondies, verre dépoli (glassmorphism),
+# et micro-interactions au clic. Ce fichier doit être chargé APRÈS style.css.
+--------------------------------------------------------------*/
+
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-bg-strong: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --glass-shadow: 0 8px 32px rgba(31, 74, 99, 0.15);
+  --glass-radius: 22px;
+  --glass-radius-sm: 14px;
+  --brand: #3f93c0;
+  --brand-2: #65c9cd;
+}
+
+/* Fond doux avec taches de couleur floutées pour faire ressortir le verre */
+body {
+  background:
+    radial-gradient(600px circle at 8% 12%, rgba(63, 147, 192, 0.10), transparent 60%),
+    radial-gradient(700px circle at 92% 18%, rgba(101, 201, 205, 0.12), transparent 55%),
+    radial-gradient(800px circle at 15% 85%, rgba(63, 147, 192, 0.08), transparent 60%),
+    #fbfdfe;
+}
+
+/*--------------------------------------------------------------
+# Barres du haut : verre flottant
+--------------------------------------------------------------*/
+#topbar {
+  background: linear-gradient(135deg, rgba(63, 147, 192, 0.85), rgba(101, 201, 205, 0.85));
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+}
+
+#header {
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: var(--glass-shadow);
+}
+
+/*--------------------------------------------------------------
+# Boutons — arrondis, verre, effet au clic
+--------------------------------------------------------------*/
+.appointment-btn,
+#hero .btn-get-started,
+.cta .cta-btn,
+.appointment .php-email-form button[type=submit],
+.contact .php-email-form button[type=submit],
+.back-to-top {
+  border-radius: 50px !important;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 6px 20px rgba(63, 147, 192, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: transform 0.15s ease, box-shadow 0.25s ease, background 0.3s ease;
+}
+
+.appointment-btn:hover,
+#hero .btn-get-started:hover,
+.cta .cta-btn:hover,
+.appointment .php-email-form button[type=submit]:hover,
+.contact .php-email-form button[type=submit]:hover,
+.back-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(63, 147, 192, 0.45);
+  background: linear-gradient(135deg, var(--brand-2), var(--brand)) !important;
+}
+
+.appointment-btn:active,
+#hero .btn-get-started:active,
+.cta .cta-btn:active,
+.appointment .php-email-form button[type=submit]:active,
+.contact .php-email-form button[type=submit]:active,
+.back-to-top:active {
+  transform: translateY(0) scale(0.96);
+  box-shadow: 0 3px 10px rgba(63, 147, 192, 0.35);
+}
+
+/*--------------------------------------------------------------
+# Cartes en verre : services, partenaires, membres, avis, infos
+--------------------------------------------------------------*/
+.featured-services .icon-box,
+.services .icon-box,
+.testimonials .testimonial-item,
+.contact .info-box,
+.doctors .member,
+.faq-list li {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--glass-radius) !important;
+  box-shadow: var(--glass-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.featured-services .icon-box:hover,
+.services .icon-box:hover,
+.testimonials .testimonial-item:hover,
+.contact .info-box:hover,
+.doctors .member:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(31, 74, 99, 0.22);
+  background: var(--glass-bg-strong) !important;
+}
+
+.doctors .member .member-img,
+.doctors .member .member-img img {
+  border-radius: var(--glass-radius) var(--glass-radius) 0 0 !important;
+}
+
+.doctors .member .member-info {
+  border-radius: 0 0 var(--glass-radius) var(--glass-radius) !important;
+}
+
+/* Images arrondies un peu partout */
+.about img,
+.gallery-slider img,
+.departments img,
+.featured-services .icon-box img {
+  border-radius: var(--glass-radius-sm) !important;
+}
+
+/*--------------------------------------------------------------
+# Formulaires (rendez-vous / contact) : champs en verre, arrondis
+--------------------------------------------------------------*/
+.php-email-form .form-control,
+.php-email-form textarea,
+.php-email-form select,
+.form-select {
+  background: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(63, 147, 192, 0.25) !important;
+  border-radius: var(--glass-radius-sm) !important;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.php-email-form .form-control:focus,
+.php-email-form textarea:focus,
+.php-email-form select:focus,
+.form-select:focus {
+  box-shadow: 0 0 0 4px rgba(63, 147, 192, 0.18) !important;
+  border-color: var(--brand) !important;
+}
+
+.appointment,
+.contact {
+  position: relative;
+}
+
+.appointment form,
+#appointment .php-email-form,
+#contact .col-lg-6 form {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--glass-radius) !important;
+  box-shadow: var(--glass-shadow);
+  padding: 30px;
+}
+
+/*--------------------------------------------------------------
+# Onglets départements + FAQ : coins arrondis, sélection en verre
+--------------------------------------------------------------*/
+.departments .nav-tabs .nav-link {
+  border-radius: var(--glass-radius-sm) !important;
+  transition: background 0.3s ease, transform 0.15s ease;
+}
+
+.departments .nav-tabs .nav-link.active {
+  background: var(--glass-bg-strong) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--glass-shadow);
+}
+
+.departments .nav-tabs .nav-link:active {
+  transform: scale(0.98);
+}
+
+.faq-list .question {
+  border-radius: var(--glass-radius-sm) !important;
+  transition: background 0.25s ease;
+}
+
+/*--------------------------------------------------------------
+# Footer en verre
+--------------------------------------------------------------*/
+#footer {
+  background: linear-gradient(180deg, rgba(63, 147, 192, 0.06), rgba(63, 147, 192, 0.14));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+#footer .social-links a {
+  border-radius: 50% !important;
+  transition: transform 0.2s ease;
+}
+
+#footer .social-links a:hover {
+  transform: translateY(-3px) scale(1.08);
+}
+
+/* Clic satisfaisant sur tous les liens/icônes interactifs */
+a,
+button,
+.nav-link,
+.social-links a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:active,
+.social-links a:active {
+  transform: scale(0.94);
+}
