@@ -137,7 +137,7 @@
             frag.appendChild(outer);
           });
           node.replaceChild(frag, n);
-        } else if (n.nodeType === 1 && n.tagName !== "BR" && !n.classList.contains("pill-img")) {
+        } else if (n.nodeType === 1 && n.tagName !== "BR") {
           walk(n);
         }
       });
@@ -172,44 +172,29 @@
     setTimeout(function () { if (ST) ST.refresh(); }, 50);
   }
 
+  // Première visite : le logo, une fine barre qui se remplit, puis un fondu
   function runLoader() {
     if (lenis) lenis.stop();
-    var count = $(".loader__count", loader);
-    var scan = $(".loader__scan", loader);
-    var p = { v: 0 };
-    var tl = gsap.timeline({ onComplete: function () { loader.remove(); store(function () { sessionStorage.setItem(SEEN, "1"); }); } });
-    tl.to(p, {
-      v: 100, duration: 2.1, ease: "power2.inOut",
-      onUpdate: function () { count.textContent = String(Math.round(p.v)).padStart(3, "0"); }
-    })
-      .to(".loader__mark", { scale: 0.6, opacity: 0, duration: 0.5, ease: "power3.in" }, "-=0.25")
-      .set(scan, { opacity: 1 })
-      .to(loader, { clipPath: "inset(100% 0% 0% 0%)", duration: 1.1, ease: "expo.inOut" })
-      .to(scan, { top: "100%", duration: 1.1, ease: "expo.inOut" }, "<")
-      .add(startIntro, "-=0.65");
+    gsap.timeline({ onComplete: function () { loader.remove(); store(function () { sessionStorage.setItem(SEEN, "1"); }); } })
+      .to($(".loader__bar i", loader), { scaleX: 1, duration: 0.9, ease: "power2.inOut" })
+      .to(loader, { opacity: 0, duration: 0.5, ease: "power2.out" })
+      .add(startIntro, "-=0.35");
   }
 
+  // Changement de page : simple fondu au blanc
   function pageIn() {
     store(function () { sessionStorage.removeItem(PT); });
-    var line = $(".pt__line", pt);
-    gsap.timeline({ onComplete: function () { root.classList.remove("pt-in"); gsap.set(pt, { clearProps: "clipPath" }); } })
-      .set(pt, { clipPath: "inset(0% 0% 0% 0%)" })
-      .set(line, { top: "100%" })
-      .to(pt, { clipPath: "inset(0% 0% 100% 0%)", duration: 1, ease: "expo.inOut", delay: 0.15 })
-      .to(line, { top: "0%", duration: 1, ease: "expo.inOut" }, "<")
-      .add(startIntro, "-=0.6");
+    gsap.to(pt, {
+      opacity: 0, duration: 0.5, ease: "power2.out", delay: 0.05,
+      onComplete: function () { root.classList.remove("pt-in"); gsap.set(pt, { clearProps: "opacity" }); }
+    });
+    startIntro();
   }
 
   function pageOut(href) {
     store(function () { sessionStorage.setItem(PT, "1"); });
     if (lenis) lenis.stop();
-    var line = $(".pt__line", pt);
-    gsap.timeline({ onComplete: function () { window.location.href = href; } })
-      .set(pt, { clipPath: "inset(100% 0% 0% 0%)" })
-      .set(line, { top: "100%" })
-      .to(pt, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.9, ease: "expo.inOut" })
-      .to(line, { top: "0%", duration: 0.9, ease: "expo.inOut" }, "<")
-      .from(".pt__mark, .pt__lbl", { opacity: 0, y: 20, duration: 0.4 }, "-=0.35");
+    gsap.to(pt, { opacity: 1, duration: 0.35, ease: "power2.out", onComplete: function () { window.location.href = href; } });
   }
 
   if (motion && pt) {
@@ -224,7 +209,7 @@
       pageOut(url.href);
     });
     window.addEventListener("pageshow", function (e) {
-      if (e.persisted) { gsap.set(pt, { clipPath: "inset(100% 0% 0% 0%)" }); if (lenis) lenis.start(); }
+      if (e.persisted) { gsap.set(pt, { opacity: 0 }); if (lenis) lenis.start(); }
     });
   }
 
@@ -236,17 +221,16 @@
     var heroCard = $(".hero__card, .phero__card");
     var tl = gsap.timeline({ defaults: { ease: "expo.out" } });
     if (heroCard) {
-      tl.fromTo(heroCard, { scale: 0.92, borderRadius: 60 }, { scale: 1, borderRadius: 32, duration: 1.6, ease: "expo.inOut", clearProps: "transform" }, 0);
       var bg = $(".hero__img img, .phero__bg img", heroCard);
-      if (bg) tl.fromTo(bg, { scale: 1.35 }, { scale: 1, duration: 2.2, ease: "expo.out" }, 0.1);
+      if (bg) tl.fromTo(bg, { scale: 1.12 }, { scale: 1, duration: 1.8, ease: "expo.out" }, 0);
     }
     $$('[data-split="hero"]').forEach(function (h) {
-      tl.fromTo(splitWords(h), { yPercent: 115 }, { yPercent: 0, duration: 1.4, stagger: 0.06 }, 0.55);
+      tl.fromTo(splitWords(h), { yPercent: 115 }, { yPercent: 0, duration: 1.2, stagger: 0.05 }, 0.15);
     });
     var intros = $$("[data-intro]");
-    if (intros.length) tl.to(intros, { opacity: 1, y: 0, duration: 1.3, stagger: 0.08 }, 0.9);
-    $$(".hero [data-count], .phero [data-count]").forEach(function (el) { tl.add(countUp(el), 1.3); });
-    if ($(".hero__card")) heroSweep(tl, 1.1);
+    if (intros.length) tl.to(intros, { opacity: 1, y: 0, duration: 1.1, stagger: 0.07 }, 0.4);
+    $$(".hero [data-count], .phero [data-count]").forEach(function (el) { tl.add(countUp(el), 0.8); });
+    if ($(".hero__card")) heroSweep(tl, 0.8);
   }
 
   /* ======================================================================
@@ -421,33 +405,6 @@
       });
     });
 
-    // Parcours : la ligne ECG se dessine pendant que la section est épinglée
-    mm.add("(min-width: 961px)", function () { ecg(true); });
-    mm.add("(max-width: 960px)", function () { ecg(false); });
-  }
-
-  function ecg(pin) {
-    var sec = $(".ecg-sec");
-    if (!sec) return;
-    var line = $(".ecg__line", sec);
-    var dot = $(".ecg__dot", sec);
-    var steps = $$(".ecg__step", sec);
-    var len = line.getTotalLength();
-    var centers = [120, 360, 600, 840, 1080];
-    line.style.strokeDasharray = len;
-    line.style.strokeDashoffset = len;
-    ST.create({
-      trigger: sec, start: pin ? "top top" : "top 70%", end: pin ? "+=140%" : "bottom 70%",
-      pin: pin, scrub: 0.8,
-      onUpdate: function (self) {
-        var l = len * self.progress;
-        line.style.strokeDashoffset = len - l;
-        var pnt = line.getPointAtLength(l);
-        dot.setAttribute("cx", pnt.x);
-        dot.setAttribute("cy", pnt.y);
-        steps.forEach(function (s, i) { s.classList.toggle("is-on", pnt.x >= centers[i] - 20); });
-      }
-    });
   }
 
   /* ======================================================================
@@ -473,57 +430,7 @@
     ztl.to(center, { "--shade": 1, duration: 0.2 }, 0.55)
       .to(".zoom__title", { opacity: 1, duration: 0.15 }, 0.62)
       .from(".zoom__title .h2", { y: 60, duration: 0.25 }, 0.62)
-      .to(".zoom__note", { opacity: 1, duration: 0.1 }, 0.7)
       .to({}, { duration: 0.2 });
-  }
-
-  /* ======================================================================
-     Avant / après travaux
-     ====================================================================== */
-  $$(".ba").forEach(function (ba) {
-    var handle = $(".ba__handle", ba);
-    var touched = false;
-    var set = function (p) {
-      p = Math.max(0, Math.min(100, p));
-      ba.style.setProperty("--pos", p + "%");
-      handle.setAttribute("aria-valuenow", Math.round(p));
-    };
-    var fromEvent = function (e) {
-      var b = ba.getBoundingClientRect();
-      set(((e.clientX - b.left) / b.width) * 100);
-    };
-    var dragging = false;
-    ba.addEventListener("pointerdown", function (e) { dragging = true; touched = true; ba.setPointerCapture(e.pointerId); fromEvent(e); });
-    ba.addEventListener("pointermove", function (e) { if (dragging) fromEvent(e); });
-    ba.addEventListener("pointerup", function () { dragging = false; });
-    handle.addEventListener("keydown", function (e) {
-      var v = parseFloat(getComputedStyle(ba).getPropertyValue("--pos")) || 50;
-      if (e.key === "ArrowLeft") { set(v - 5); touched = true; }
-      if (e.key === "ArrowRight") { set(v + 5); touched = true; }
-    });
-    if (motion) {
-      var o = { p: 50 };
-      gsap.timeline({ scrollTrigger: { trigger: ba, start: "top 65%" } })
-        .to(o, { p: 18, duration: 1.1, ease: "power3.inOut", onUpdate: function () { if (!touched) set(o.p); } })
-        .to(o, { p: 82, duration: 1.4, ease: "power3.inOut", onUpdate: function () { if (!touched) set(o.p); } })
-        .to(o, { p: 50, duration: 1, ease: "power3.inOut", onUpdate: function () { if (!touched) set(o.p); } });
-    }
-  });
-
-  /* ======================================================================
-     Frise chronologique horizontale (à propos)
-     ====================================================================== */
-  if (mm) {
-    mm.add("(min-width: 961px)", function () {
-      var tlSec = $(".tl");
-      if (!tlSec) return;
-      var track = $(".tl__track", tlSec);
-      var dist = function () { return Math.max(0, track.scrollWidth - window.innerWidth); };
-      gsap.to(track, {
-        x: function () { return -dist(); }, ease: "none",
-        scrollTrigger: { trigger: tlSec, pin: ".tl__pin", start: "top top", end: function () { return "+=" + dist(); }, scrub: 1, invalidateOnRefresh: true }
-      });
-    });
   }
 
   /* ======================================================================

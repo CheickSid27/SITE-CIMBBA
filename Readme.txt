@@ -3,15 +3,15 @@ CIMBBA — site vitrine, page À propos et showroom (refonte 2026)
 
 Pages
   index.html      Centre médical (accueil)
-  a-propos.html   Fondateur, médecin principal, histoire, équipe, valeurs
+  a-propos.html   Fondateur (aussi médecin principal), histoire, équipe, valeurs
   showroom.html   Showroom de matériel médical (catalogue + demande de devis)
   L'ancienne page d'accueil reste dans l'historique git (commit c75f97f).
 
 Direction artistique
   Base : DA Dribbble « Medical and Healthcare Service Website » (Peterdraw Studio).
-  Signature CIMBBA : tout le site parle le langage de l'imagerie médicale
-  (loupe rayons X sur le hero, cadres « film de radiologie », tracé ECG,
-  préchargeur en balayage d'échographe, transitions de page par scan).
+  Signature CIMBBA : langage visuel de l'imagerie médicale (loupe rayons X
+  sur le hero, cadres « film de radiologie »), chargement et transitions sobres.
+  Photos : uniquement des personnes noires ou métisses, ou du matériel seul.
 
 Code
   assets/css/cimbba.css    Design system (couleurs et typo dans :root)
@@ -26,7 +26,7 @@ Contenus provisoires
   Ils seront remplis avec la fiche de collecte envoyée au client.
 
 Images
-  assets/img/maquettes/   Rendus extraits de « SIMULATIONS DES DIFFERENTES RÉALISATIONS 2.pdf »
+  assets/img/maquettes/   Visuels des espaces CIMBBA (extraits du dossier de l'agence Essenxiel)
   assets/img/stock/       Photos Unsplash (licence Unsplash, usage commercial libre)
   assets/img/new/         Logo (pictogramme) + photo réelle de la façade actuelle
   -> Remplacer par les vraies photos du centre, de l'équipe et des produits dès qu'elles existent.

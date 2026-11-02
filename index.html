@@ -35,30 +35,20 @@
     <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></symbol>
     <symbol id="i-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
-    <symbol id="i-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
     <symbol id="i-cross" viewBox="0 0 24 24" fill="currentColor"><path d="M9 2h6v7h7v6h-7v7H9v-7H2V9h7z"/></symbol>
-    <symbol id="i-drag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6-6 6 6 6M15 6l6 6-6 6"/></symbol>
     <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></symbol>
     <symbol id="i-facebook" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"/></symbol>
   </svg>
 
-  <!-- Préchargeur : balayage d'échographe (première visite uniquement) -->
+  <!-- Préchargeur (première visite uniquement) -->
   <div class="loader" aria-hidden="true">
-    <div class="loader__echo"><div class="loader__mark"><img src="assets/img/new/logo-mark.png" alt=""></div></div>
-    <div class="loader__meta">
-      <p class="mono">CIMBBA · Acquisition de l'image<br>Grand-Bassam · Côte d'Ivoire</p>
-      <div class="loader__count">000</div>
-    </div>
-    <div class="loader__scan"></div>
+    <div class="loader__mark"><img src="assets/img/new/logo-mark.png" alt=""></div>
+    <div class="loader__bar"><i></i></div>
   </div>
 
-  <!-- Transition entre les pages -->
-  <div class="pt" aria-hidden="true">
-    <div class="pt__line"></div>
-    <div class="pt__mark"><img src="assets/img/new/logo-mark.png" alt=""></div>
-    <p class="pt__lbl mono">Chargement de l'examen…</p>
-  </div>
+  <!-- Fondu entre les pages -->
+  <div class="pt" aria-hidden="true"></div>
 
   <!-- ======= En-tête ======= -->
   <header class="hdr">
@@ -130,10 +120,6 @@
           </div>
 
           <div class="hero__bottom">
-            <a class="spin" href="#services" data-intro aria-label="Échographie et radiographie 24h/24 — voir nos services">
-              <svg viewBox="0 0 132 132" aria-hidden="true"><defs><path id="circ" d="M66,66 m-52,0 a52,52 0 1,1 104,0 a52,52 0 1,1 -104,0"/></defs><text><textPath href="#circ" textLength="320" lengthAdjust="spacing">Écho &amp; radio · 24h/24 · CIMBBA ·</textPath></text></svg>
-              <span class="spin__core"><svg><use href="#i-pulse"/></svg></span>
-            </a>
             <div class="stats glass" data-intro>
               <div class="stat"><strong data-count="24" data-suffix="h">24h</strong><span>Écho &amp; radio, 7j/7</span></div>
               <div class="stat"><strong data-count="9">9</strong><span>Expertises médicales</span></div>
@@ -161,7 +147,7 @@
     <section class="sec manifesto" style="padding-top:clamp(60px,8vw,110px)">
       <div class="wrap">
         <span class="tag" data-fade><i>(01)</i> Notre engagement</span>
-        <p class="manifesto__text" data-words>À Grand-Bassam, CIMBBA réunit l'imagerie <span class="pill-img"><img src="assets/img/stock/echo1.jpg" alt=""></span> le laboratoire <span class="pill-img"><img src="assets/img/stock/lab2.jpg" alt=""></span> et les consultations sous un même toit. Parce qu'un bon traitement commence toujours par un diagnostic juste <span class="pill-img"><img src="assets/img/stock/xray1.jpg" alt=""></span> posé vite, expliqué clairement.</p>
+        <p class="manifesto__text" data-words>À Grand-Bassam, CIMBBA réunit l'imagerie, le laboratoire et les consultations sous un même toit. Parce qu'un bon traitement commence toujours par un diagnostic juste, posé vite et expliqué clairement.</p>
         <div class="manifesto__foot">
           <p class="lead" data-fade>Moins d'allers-retours, des résultats rapides, une équipe qui se parle : c'est ce qui change tout pour les patients, et pour les médecins qui nous les confient.</p>
           <a class="link" href="a-propos.html" data-fade>Notre histoire <svg><use href="#i-right"/></svg></a>
@@ -183,37 +169,37 @@
         </div>
         <div class="hs__track">
           <a class="svc" href="#rendez-vous">
-            <div class="film"><img src="assets/img/stock/echo1.jpg" alt="Examen d'échographie" loading="lazy"><span class="film__lbl film__lbl--tl">Série 01 · Écho</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
+            <div class="film"><img src="assets/img/stock/echo2.jpg" alt="Appareil d'échographie" loading="lazy"><span class="film__lbl film__lbl--tl">Série 01 · Écho</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
             <span class="svc__badge">24H/24</span>
             <div class="svc__body"><div class="svc__row"><h3>Échographie</h3><span class="svc__n">01</span></div><p>Abdominale, pelvienne, obstétricale, parties molles : un examen sûr et indolore, avec suivi de grossesse.</p></div>
           </a>
           <a class="svc" href="#rendez-vous">
-            <div class="film"><img src="assets/img/stock/xray2.jpg" alt="Médecins analysant une radiographie" loading="lazy"><span class="film__lbl film__lbl--tl">Série 02 · RX</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
+            <div class="film"><img src="assets/img/stock/xray1.jpg" alt="Radiographie thoracique" loading="lazy"><span class="film__lbl film__lbl--tl">Série 02 · RX</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
             <span class="svc__badge">24H/24</span>
             <div class="svc__body"><div class="svc__row"><h3>Radiographie</h3><span class="svc__n">02</span></div><p>Os, poumons, articulations, sinus : des clichés nets, interprétés rapidement par nos spécialistes.</p></div>
           </a>
           <a class="svc" href="#rendez-vous">
-            <div class="film"><img src="assets/img/stock/echo2.jpg" alt="Appareil d'échodoppler" loading="lazy"><span class="film__lbl film__lbl--tl">Série 03 · Doppler</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
+            <div class="film"><img src="assets/img/stock/monitor-vitals.jpg" alt="Moniteur de suivi cardiaque" loading="lazy"><span class="film__lbl film__lbl--tl">Série 03 · Doppler</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
             <div class="svc__body"><div class="svc__row"><h3>Échodoppler &amp; ECG</h3><span class="svc__n">03</span></div><p>Cœur, artères et veines, électrocardiogramme : pour dépister et suivre les maladies cardiovasculaires.</p></div>
           </a>
           <a class="svc" href="#rendez-vous">
-            <div class="film"><img src="assets/img/stock/lab3.jpg" alt="Microscope d'analyse cytologique" loading="lazy"><span class="film__lbl film__lbl--tl">Série 04 · Cyto</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
+            <div class="film"><img src="assets/img/stock/lab-micro.jpg" alt="Biologiste au microscope" loading="lazy"><span class="film__lbl film__lbl--tl">Série 04 · Cyto</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
             <div class="svc__body"><div class="svc__row"><h3>Microbiopsies</h3><span class="svc__n">04</span></div><p>Prélèvements et cytoponctions guidés par l'image, mini-invasifs, pour un diagnostic précis.</p></div>
           </a>
           <a class="svc" href="#rendez-vous">
-            <div class="film"><img src="assets/img/stock/lab2.jpg" alt="Tubes de prélèvement au laboratoire" loading="lazy"><span class="film__lbl film__lbl--tl">Série 05 · Labo</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
+            <div class="film"><img src="assets/img/stock/lab-pipette.jpg" alt="Biologiste au laboratoire d'analyses" loading="lazy"><span class="film__lbl film__lbl--tl">Série 05 · Labo</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
             <div class="svc__body"><div class="svc__row"><h3>Laboratoire</h3><span class="svc__n">05</span></div><p>Hématologie, biochimie, sérologie, bilans prénataux et de santé : des résultats fiables, rendus vite.</p></div>
           </a>
           <a class="svc" href="#rendez-vous">
-            <div class="film"><img src="assets/img/stock/c-bp.jpg" alt="Prise de tension en consultation" loading="lazy"><span class="film__lbl film__lbl--tl">Série 06 · Consult.</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
+            <div class="film"><img src="assets/img/stock/medgen.jpg" alt="Médecin consultant un dossier sur tablette" loading="lazy"><span class="film__lbl film__lbl--tl">Série 06 · Consult.</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
             <div class="svc__body"><div class="svc__row"><h3>Médecine générale</h3><span class="svc__n">06</span></div><p>Bilans de santé, maladies chroniques, et rhumatologie : arthrose, goutte, douleurs articulaires.</p></div>
           </a>
           <a class="svc" href="#rendez-vous">
-            <div class="film"><img src="assets/img/stock/mri3.jpg" alt="Médecins examinant des images cérébrales" loading="lazy"><span class="film__lbl film__lbl--tl">Série 07 · Cardio-Neuro</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
+            <div class="film"><img src="assets/img/stock/cardio.jpg" alt="Médecin auscultant un patient au stéthoscope" loading="lazy"><span class="film__lbl film__lbl--tl">Série 07 · Cardio-Neuro</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
             <div class="svc__body"><div class="svc__row"><h3>Cardiologie &amp; neurologie</h3><span class="svc__n">07</span></div><p>Hypertension, palpitations, maux de tête, vertiges : un avis spécialisé appuyé sur nos examens.</p></div>
           </a>
           <a class="svc" href="#rendez-vous">
-            <div class="film"><img src="assets/img/stock/preg.jpg" alt="Future maman tenant une échographie" loading="lazy"><span class="film__lbl film__lbl--tl">Série 08 · Gynéco</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
+            <div class="film"><img src="assets/img/stock/preg-smile.jpg" alt="Future maman souriante pendant son suivi de grossesse" loading="lazy"><span class="film__lbl film__lbl--tl">Série 08 · Gynéco</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
             <div class="svc__body"><div class="svc__row"><h3>Gynécologie</h3><span class="svc__n">08</span></div><p>Suivi de grossesse, contraception, santé de la femme, avec échographie sur place.</p></div>
           </a>
           <a class="svc" href="#rendez-vous">
@@ -232,31 +218,11 @@
       </div>
     </section>
 
-    <!-- ======= Avant / après ======= -->
-    <section class="sec" id="centre">
-      <div class="wrap">
-        <div class="ba-head">
-          <div>
-            <span class="tag"><i>(03)</i> Le centre</span>
-            <h2 class="h2" data-split style="margin-top:18px">CIMBBA <span class="thin">se transforme.</span></h2>
-          </div>
-          <p class="lead" data-fade>Nouvelle façade, nouvel accueil, salles d'attente repensées, signalétique claire : le centre entre dans une nouvelle ère. Glissez pour comparer.</p>
-        </div>
-        <div class="ba" data-fade>
-          <img src="assets/img/new/facade-actuelle.jpg" alt="Façade actuelle de CIMBBA">
-          <img class="ba__after" src="assets/img/maquettes/facade.jpg" alt="Façade de CIMBBA après travaux (simulation)">
-          <span class="ba__tag ba__tag--l glass mono">Aujourd'hui</span>
-          <span class="ba__tag ba__tag--r glass mono">Après travaux</span>
-          <div class="ba__handle" role="slider" tabindex="0" aria-label="Comparer avant et après travaux" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span class="ba__knob"><svg><use href="#i-drag"/></svg></span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======= Le nouveau CIMBBA : plongée dans la galerie ======= -->
-    <section class="zoom" id="nouveau">
+    <!-- ======= Le centre : plongée dans la galerie ======= -->
+    <section class="zoom" id="centre">
       <div class="zoom__pin">
         <div class="zoom__intro">
-          <span class="tag"><i style="color:#9fb3d1">(04)</i> Le nouveau CIMBBA</span>
+          <span class="tag"><i style="color:#9fb3d1">(03)</i> Le centre</span>
           <h2 class="h2" style="margin-top:14px">Entrez.</h2>
         </div>
         <div class="zoom__item" style="left:5vw;top:16vh;width:14vw;height:19vw"><img src="assets/img/maquettes/hall-bienvenue.jpg" alt=""></div>
@@ -267,34 +233,26 @@
         <div class="zoom__item" style="left:24vw;top:75vh;width:13vw;height:9vw"><img src="assets/img/maquettes/entree-attente.jpg" alt=""></div>
         <div class="zoom__item" style="left:63vw;top:74vh;width:15vw;height:10vw"><img src="assets/img/maquettes/escaliers.jpg" alt=""></div>
         <div class="zoom__item" style="left:80vw;top:57vh;width:16vw;height:11vw"><img src="assets/img/maquettes/salle-attente-2.jpg" alt=""></div>
-        <div class="zoom__item zoom__item--c"><img src="assets/img/maquettes/salle-attente-1.jpg" alt="Future salle d'attente principale de CIMBBA"></div>
+        <div class="zoom__item zoom__item--c"><img src="assets/img/maquettes/salle-attente-1.jpg" alt="Salle d'attente principale de CIMBBA"></div>
         <div class="zoom__title">
           <h2 class="h2">Des espaces pensés pour votre sérénité.</h2>
-          <p>Accueil lumineux, salles d'attente climatisées, parcours fléché jusqu'à votre examen : le centre tel qu'il sera à la fin des travaux.</p>
+          <p>Accueil lumineux, salles d'attente climatisées, parcours fléché jusqu'à votre examen : tout est fait pour que vous vous sentiez attendu.</p>
         </div>
-        <span class="zoom__note mono">Simulation 3D · projet d'aménagement</span>
       </div>
     </section>
 
-    <!-- ======= Parcours patient : tracé ECG ======= -->
-    <section class="sec sec--navy ecg-sec" id="parcours">
+    <!-- ======= Parcours patient ======= -->
+    <section class="sec sec--navy" id="parcours">
       <div class="wrap">
-        <span class="tag"><i style="color:#9fb3d1">(05)</i> Votre parcours</span>
-        <h2 class="h2" data-split style="margin-top:18px">Cinq étapes, <span class="thin">un seul fil.</span></h2>
-        <div class="ecg">
-          <svg viewBox="0 0 1200 220" fill="none" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
-            <path class="ecg__base" d="M0 140 L60 140 L74 124 L86 140 L106 140 L116 30 L128 196 L140 140 L164 140 L178 116 L194 140 L300 140 L314 124 L326 140 L346 140 L356 30 L368 196 L380 140 L404 140 L418 116 L434 140 L540 140 L554 124 L566 140 L586 140 L596 30 L608 196 L620 140 L644 140 L658 116 L674 140 L780 140 L794 124 L806 140 L826 140 L836 30 L848 196 L860 140 L884 140 L898 116 L914 140 L1020 140 L1034 124 L1046 140 L1066 140 L1076 30 L1088 196 L1100 140 L1124 140 L1138 116 L1154 140 L1200 140"/>
-            <path class="ecg__line" d="M0 140 L60 140 L74 124 L86 140 L106 140 L116 30 L128 196 L140 140 L164 140 L178 116 L194 140 L300 140 L314 124 L326 140 L346 140 L356 30 L368 196 L380 140 L404 140 L418 116 L434 140 L540 140 L554 124 L566 140 L586 140 L596 30 L608 196 L620 140 L644 140 L658 116 L674 140 L780 140 L794 124 L806 140 L826 140 L836 30 L848 196 L860 140 L884 140 L898 116 L914 140 L1020 140 L1034 124 L1046 140 L1066 140 L1076 30 L1088 196 L1100 140 L1124 140 L1138 116 L1154 140 L1200 140"/>
-            <circle class="ecg__dot" r="6" cx="0" cy="140"/>
-          </svg>
-          <div class="ecg__steps">
-            <div class="ecg__step"><span class="mono">Étape 01</span><h3>Accueil</h3><p>On vous reçoit, on vous oriente, on répond à vos questions.</p></div>
-            <div class="ecg__step"><span class="mono">Étape 02</span><h3>Enregistrement</h3><p>Ordonnance, assurance et consignes de préparation.</p></div>
-            <div class="ecg__step"><span class="mono">Étape 03</span><h3>Examen</h3><p>Réalisé au calme par un professionnel qui vous explique tout.</p></div>
-            <div class="ecg__step"><span class="mono">Étape 04</span><h3>Interprétation</h3><p>Lecture des images ou des analyses par nos spécialistes.</p></div>
-            <div class="ecg__step"><span class="mono">Étape 05</span><h3>Résultats</h3><p>Un compte rendu clair, remis vite, pour vous et votre médecin.</p></div>
-          </div>
-        </div>
+        <span class="tag"><i style="color:#9fb3d1">(04)</i> Votre parcours</span>
+        <h2 class="h2" data-split style="margin-top:18px">Cinq étapes, <span class="thin">une seule équipe.</span></h2>
+        <ol class="steps">
+          <li data-fade><span class="mono">Étape 01</span><h3>Accueil</h3><p>On vous reçoit, on vous oriente, on répond à vos questions.</p></li>
+          <li data-fade data-delay="1"><span class="mono">Étape 02</span><h3>Enregistrement</h3><p>Ordonnance, assurance et consignes de préparation.</p></li>
+          <li data-fade data-delay="2"><span class="mono">Étape 03</span><h3>Examen</h3><p>Réalisé au calme par un professionnel qui vous explique tout.</p></li>
+          <li data-fade data-delay="3"><span class="mono">Étape 04</span><h3>Interprétation</h3><p>Lecture des images ou des analyses par nos spécialistes.</p></li>
+          <li data-fade data-delay="4"><span class="mono">Étape 05</span><h3>Résultats</h3><p>Un compte rendu clair, remis vite, pour vous et votre médecin.</p></li>
+        </ol>
       </div>
     </section>
 
@@ -307,7 +265,7 @@
           <span class="film__lbl film__lbl--br">CIMBBA · 2026</span>
         </a>
         <div>
-          <span class="tag" data-fade><i>(06)</i> Ceux qui font CIMBBA</span>
+          <span class="tag" data-fade><i>(05)</i> Ceux qui font CIMBBA</span>
           <p class="quote" data-split style="margin-top:30px">Un bon traitement commence toujours par un diagnostic juste.</p>
           <div class="sign" data-fade><span><b>La direction de CIMBBA</b><small>Centre d'Imagerie Médico-Biologique de Bassam</small></span></div>
           <p class="lead" data-fade style="margin-top:30px">Radiologues, sonographes, biologistes, médecins, personnel d'accueil : découvrez celles et ceux qui font CIMBBA, leur parcours et ce qui les anime.</p>
@@ -323,14 +281,14 @@
       <div class="wrap">
         <div class="sr-teaser split" data-fade>
           <div style="position:relative;z-index:1">
-            <span class="tag" style="color:var(--scan)"><i style="color:#c8d6ec">(07)</i> Nouveau · Showroom</span>
+            <span class="tag" style="color:var(--scan)"><i style="color:#c8d6ec">(06)</i> Nouveau · Showroom</span>
             <h2 class="h2" data-split style="margin-top:18px">Le matériel médical, <span class="thin">conseillé par des soignants.</span></h2>
             <p class="lead" style="margin-top:24px">Tensiomètres, fauteuils roulants, lits médicalisés, équipements de cabinet et consommables : pour les familles comme pour les cliniques.</p>
             <div class="sr-teaser__cats"><span>Matériel médical</span><span>Équipements hospitaliers</span><span>Aides à la mobilité</span><span>Mobilier médical</span><span>Consommables</span></div>
             <a class="btn btn--light" href="showroom.html" data-magnetic><span class="btn__label"><span>Visiter le showroom</span><span>Visiter le showroom</span></span><span class="btn__ico"><svg><use href="#i-arrow"/></svg></span></a>
           </div>
           <div class="fan" aria-hidden="true">
-            <div class="fan__card"><img src="assets/img/stock/bp1.jpg" alt=""><div><small>Matériel médical</small><b>Tensiomètre électronique</b></div></div>
+            <div class="fan__card"><img src="assets/img/stock/bp-arm.jpg" alt=""><div><small>Matériel médical</small><b>Tensiomètre électronique</b></div></div>
             <div class="fan__card"><img src="assets/img/stock/wc1.jpg" alt=""><div><small>Mobilité</small><b>Fauteuil roulant pliant</b></div></div>
             <div class="fan__card"><img src="assets/img/stock/bed3.jpg" alt=""><div><small>Mobilier</small><b>Lit médicalisé électrique</b></div></div>
           </div>
@@ -343,7 +301,7 @@
       <div class="wrap">
         <div class="ba-head">
           <div>
-            <span class="tag"><i>(08)</i> Assurances</span>
+            <span class="tag"><i>(07)</i> Assurances</span>
             <h2 class="h2" data-split style="margin-top:18px">Votre prise en charge, <span class="thin">simplifiée.</span></h2>
           </div>
           <p class="lead" data-fade>Nous travaillons avec les principaux assureurs et organismes. Pensez à apporter votre carte et votre bon de prise en charge.</p>
@@ -360,7 +318,7 @@
     <section class="sec" id="rendez-vous">
       <div class="wrap contact">
         <div>
-          <span class="tag"><i>(09)</i> Rendez-vous</span>
+          <span class="tag"><i>(08)</i> Rendez-vous</span>
           <h2 class="h2" data-split style="margin-top:18px">Prenons soin <span class="thin">de vous.</span></h2>
           <p class="lead" data-fade style="margin-top:24px">Envoyez votre demande : nous vous rappelons pour confirmer le créneau et vous indiquer la préparation éventuelle.</p>
           <div class="bignum" data-fade>
@@ -374,7 +332,7 @@
             <li><span class="mono">E-mail</span><a href="mailto:infos.cimbba@gmail.com">infos.cimbba@gmail.com</a></li>
           </ul>
           <div class="urgent" data-fade>
-            <span class="urgent__pulse"><svg><use href="#i-pulse"/></svg></span>
+            <span class="urgent__pulse"><svg><use href="#i-phone"/></svg></span>
             <div><b>Échographie &amp; radiographie 24h/24</b><small>En cas d'urgence, appelez directement le 07 08 98 38 13.</small></div>
           </div>
         </div>
@@ -432,7 +390,7 @@
       <div class="wrap">
         <div class="ba-head">
           <div>
-            <span class="tag"><i>(10)</i> Questions fréquentes</span>
+            <span class="tag"><i>(09)</i> Questions fréquentes</span>
             <h2 class="h2" data-split style="margin-top:18px">Bon à savoir <span class="thin">avant de venir.</span></h2>
           </div>
         </div>
@@ -496,7 +454,7 @@
           <h4>Le centre</h4>
           <ul>
             <li><a href="#services">Nos expertises</a></li>
-            <li><a href="#centre">Le nouveau CIMBBA</a></li>
+            <li><a href="#centre">Le centre</a></li>
             <li><a href="#parcours">Votre parcours</a></li>
             <li><a href="#faq">Questions fréquentes</a></li>
           </ul>

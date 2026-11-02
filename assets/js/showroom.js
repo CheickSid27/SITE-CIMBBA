@@ -21,14 +21,14 @@
   };
 
   var PRODUCTS = [
-    { id: "tensio-elec", cat: "materiel", name: "Tensiomètre électronique au bras", desc: "Mesure automatique, grand écran, mémoire des mesures. Idéal pour le suivi à domicile.", img: "assets/img/stock/bp1.jpg", badge: "Populaire" },
+    { id: "tensio-elec", cat: "materiel", name: "Tensiomètre électronique au bras", desc: "Mesure automatique, grand écran, mémoire des mesures. Idéal pour le suivi à domicile.", img: "assets/img/stock/bp-arm.jpg", badge: "Populaire" },
     { id: "tensio-manuel", cat: "materiel", name: "Tensiomètre manopoire + stéthoscope", desc: "Kit de prise de tension manuel pour professionnels de santé et étudiants.", img: "assets/img/stock/bp3.jpg" },
     { id: "stetho", cat: "materiel", name: "Stéthoscope double pavillon", desc: "Acoustique précise, tubulure souple, adapté adulte et pédiatrie.", img: "assets/img/stock/steth2.jpg" },
-    { id: "oxymetre", cat: "materiel", name: "Oxymètre de pouls", desc: "Saturation en oxygène et fréquence cardiaque en quelques secondes.", img: "assets/img/stock/oxi.jpg", badge: "Nouveau", green: true },
+    { id: "oxymetre", cat: "materiel", name: "Oxymètre de pouls", desc: "Saturation en oxygène et fréquence cardiaque en quelques secondes.", img: "assets/img/stock/oxi-hand.jpg", badge: "Nouveau", green: true },
     { id: "diag-mural", cat: "materiel", name: "Ensemble de diagnostic mural", desc: "Otoscope et ophtalmoscope muraux pour cabinets de consultation.", img: "assets/img/stock/wall.jpg" },
     { id: "kit-diag", cat: "materiel", name: "Kit diagnostic de base", desc: "Stéthoscope, thermomètre et accessoires essentiels réunis.", img: "assets/img/stock/kit.jpg" },
 
-    { id: "moniteur", cat: "hospitalier", name: "Moniteur multiparamétrique", desc: "Surveillance ECG, SpO2, tension et température en continu.", img: "assets/img/stock/monitor.jpg", badge: "Pro" },
+    { id: "moniteur", cat: "hospitalier", name: "Moniteur multiparamétrique", desc: "Surveillance ECG, SpO2, tension et température en continu.", img: "assets/img/stock/monitor-vitals.jpg", badge: "Pro" },
     { id: "echographe", cat: "hospitalier", name: "Échographe sur chariot", desc: "Pour cabinets et cliniques : sondes multiples, installation et formation incluses.", img: "assets/img/stock/echo2.jpg", badge: "Pro" },
     { id: "perfusion", cat: "hospitalier", name: "Pied à perfusion inox", desc: "Hauteur réglable, base 5 roulettes, 2 ou 4 crochets.", img: "assets/img/stock/iv.jpg" },
 
@@ -39,7 +39,7 @@
     { id: "lit-manivelle", cat: "mobilier", name: "Lit d'hospitalisation à manivelle", desc: "Réglages manuels fiables, matelas et roulettes à frein.", img: "assets/img/stock/bed2.jpg" },
     { id: "salle-examen", cat: "mobilier", name: "Équipement de salle d'examen", desc: "Table d'examen, scialytique et mobilier pour cabinets et cliniques.", img: "assets/img/stock/or2.jpg" },
 
-    { id: "gants", cat: "consommables", name: "Gants d'examen nitrile", desc: "Boîtes de 100, sans poudre, tailles S à XL.", img: "assets/img/stock/gloves.jpg" },
+    { id: "gants", cat: "consommables", name: "Gants d'examen nitrile", desc: "Boîtes de 100, sans poudre, tailles S à XL.", img: "assets/img/stock/gloves-blue.jpg" },
     { id: "injection", cat: "consommables", name: "Seringues & matériel d'injection", desc: "Seringues stériles à usage unique, aiguilles, garrots.", img: "assets/img/stock/supplies.jpg" },
     { id: "pansements", cat: "consommables", name: "Compresses & pansements stériles", desc: "Compresses, bandes, sparadraps pour soins et cabinets.", img: "assets/img/stock/tray.jpg" },
     { id: "trousse", cat: "consommables", name: "Trousse de premiers secours", desc: "Complète, pour entreprises, écoles, véhicules et domicile.", img: "assets/img/stock/firstaid.jpg" }
