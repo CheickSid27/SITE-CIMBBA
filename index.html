@@ -1,915 +1,541 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>CIMBBA ACCEUIL Index</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-   <!-- Inclure jQuery -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-   <!-- Inclure jQuery UI -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-   <script>
-       // Attendre que le document soit prêt
-       $(document).ready(function () {
-           // Activer le datepicker sur l'élément avec la classe "datepicker"
-           $(".datepicker").datepicker({
-               dateFormat: "yy-mm-dd" // Format de la date
-           });
-       });
-   </script>
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- CIMBBA Liquid Glass Theme -->
-  <link href="assets/css/glass.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Medicio
-  * Updated: Jul 27 2023 with Bootstrap v5.3.1
-  * Template URL: https://bootstrapmade.com/medicio-free-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CIMBBA — Centre d'Imagerie Médico-Biologique de Bassam</title>
+  <meta name="description" content="CIMBBA, Grand-Bassam : échographie et radiographie 24h/24, laboratoire d'analyses, échodoppler, ECG et consultations spécialisées. Du diagnostic au traitement.">
+  <meta name="theme-color" content="#0c1e38">
+  <meta property="og:title" content="CIMBBA — Voir clair. Soigner juste.">
+  <meta property="og:description" content="Imagerie médicale, laboratoire et consultations à Grand-Bassam. Échographie & radiographie 24h/24.">
+  <meta property="og:image" content="assets/img/maquettes/facade.jpg">
+  <link rel="icon" href="assets/img/new/logo-mark.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <script>
+    (function (d) {
+      var h = d.documentElement, r = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!r) h.classList.add("motion");
+      try {
+        if (r || sessionStorage.getItem("cimbba-seen")) h.classList.add("no-loader");
+        if (!r && sessionStorage.getItem("cimbba-pt")) h.classList.add("pt-in", "no-loader");
+      } catch (e) { h.classList.add("no-loader"); }
+      setTimeout(function () { if (!window.__cimbbaReady) { h.classList.add("no-loader"); h.classList.remove("motion", "pt-in"); } }, 5000);
+    })(document);
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/cimbba.css">
+  <link rel="preload" as="image" href="assets/img/stock/c-bp.jpg">
 </head>
-
 <body>
 
-  <!-- ======= Top Bar ======= -->
-  <div id="topbar" class="d-flex align-items-center fixed-top">
-    <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
-      <div class="align-items-center d-none d-md-flex">
-        <i class="bi bi-clock"></i> Lundi - Vendredi:08H à 18H, Samedi:08H à 14H
+  <!-- Icônes -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="i-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-cross" viewBox="0 0 24 24" fill="currentColor"><path d="M9 2h6v7h7v6h-7v7H9v-7H2V9h7z"/></symbol>
+    <symbol id="i-drag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6-6 6 6 6M15 6l6 6-6 6"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"/></symbol>
+  </svg>
+
+  <!-- Préchargeur : balayage d'échographe (première visite uniquement) -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__echo"><div class="loader__mark"><img src="assets/img/new/logo-mark.png" alt=""></div></div>
+    <div class="loader__meta">
+      <p class="mono">CIMBBA · Acquisition de l'image<br>Grand-Bassam · Côte d'Ivoire</p>
+      <div class="loader__count">000</div>
+    </div>
+    <div class="loader__scan"></div>
+  </div>
+
+  <!-- Transition entre les pages -->
+  <div class="pt" aria-hidden="true">
+    <div class="pt__line"></div>
+    <div class="pt__mark"><img src="assets/img/new/logo-mark.png" alt=""></div>
+    <p class="pt__lbl mono">Chargement de l'examen…</p>
+  </div>
+
+  <!-- ======= En-tête ======= -->
+  <header class="hdr">
+    <div class="hdr__bar">
+      <a href="index.html" class="logo" aria-label="CIMBBA — accueil">
+        <span class="logo__mark"><img src="assets/img/new/logo-mark.png" alt=""></span>
+        <span><span class="logo__name">CIMBBA</span><span class="logo__sub">Imagerie · Biologie</span></span>
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a class="nav__a" href="#services">Services</a>
+        <a class="nav__a" href="#centre">Le centre</a>
+        <a class="nav__a" href="a-propos.html">À propos</a>
+        <a class="nav__a" href="showroom.html">Showroom</a>
+        <a class="nav__a" href="#rendez-vous">Contact</a>
+      </nav>
+      <div class="hdr__cta">
+        <a class="btn btn--sm" href="#rendez-vous" data-magnetic><span class="btn__label"><span>Rendez-vous</span><span>Rendez-vous</span></span><span class="btn__ico"><svg><use href="#i-arrow"/></svg></span></a>
       </div>
-      <div class="d-flex align-items-center">
-        <i class="bi bi-phone"></i>Contactez-nous maintenant +2250708983813
-      </div>
+      <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
+    </div>
+  </header>
+
+  <div class="menu" id="menu">
+    <nav class="menu__list" aria-label="Menu mobile">
+      <a class="menu__a" href="#services"><small>01</small>Services</a>
+      <a class="menu__a" href="#centre"><small>02</small>Le centre</a>
+      <a class="menu__a" href="a-propos.html"><small>03</small>À propos</a>
+      <a class="menu__a" href="showroom.html"><small>04</small>Showroom</a>
+      <a class="menu__a" href="#rendez-vous"><small>05</small>Rendez-vous</a>
+    </nav>
+    <div class="menu__foot">
+      <span class="mono">Écho &amp; radio 24h/24</span>
+      <a href="tel:+2250708983813">07 08 98 38 13</a>
+      <a href="mailto:infos.cimbba@gmail.com">infos.cimbba@gmail.com</a>
     </div>
   </div>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
+  <main>
 
-      <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt=""></a>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
+    <!-- ======= Hero : photo plein cadre + loupe rayons X ======= -->
+    <section class="hero" id="accueil">
+      <div class="hero__card">
+        <div class="hero__img"><img src="assets/img/stock/c-bp.jpg" alt="Un soignant de CIMBBA prend la tension d'un patient" fetchpriority="high"></div>
+        <div class="hero__xray" aria-hidden="true"><img src="assets/img/stock/c-bp.jpg" alt=""></div>
+        <div class="hero__shade"></div>
+        <div class="hero__scanline"></div>
+        <div class="lens" aria-hidden="true">
+          <div class="lens__ring"></div>
+          <div class="lens__read">X <span class="lens__x">0000</span> · Y <span class="lens__y">0000</span><br>kV <span class="lens__k">72</span> · mAs 14<br>CIMBBA / RX-01</div>
+        </div>
 
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto " href="#hero">Accueil</a></li>
-          <li><a class="nav-link scrollto" href="#about">A propos de CIMBBA</a></li>
-          <li><a class="nav-link scrollto" href="#services">Nos services</a></li>
-          <li><a class="nav-link scrollto" href="#departments">Nos départements</a></li>
-          <li><a class="nav-link scrollto" href="#doctors">Nos médecins</a></li>
-          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li> -->
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+        <div class="team-chip glass" data-intro>
+          <span class="team-chip__av"><img src="assets/img/stock/p-man1.jpg" alt=""><img src="assets/img/stock/p-woman1.jpg" alt=""><img src="assets/img/stock/c-tab.jpg" alt=""></span>
+          <span><strong>Équipe pluridisciplinaire</strong><small>Imagerie · biologie · clinique</small></span>
+          <span class="team-chip__ok"><svg><use href="#i-check"/></svg></span>
+        </div>
+        <span class="hero__coord mono">5.2106° N · 3.7373° O — Grand-Bassam</span>
 
-      <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Prendre un</span> Rendez-vous</a>
+        <div class="hero__inner">
+          <p class="hero__kicker mono" data-intro><b></b> Centre d'imagerie médico-biologique de Bassam</p>
+          <h1 data-split="hero">Voir clair. <span class="thin">Soigner juste.</span></h1>
+          <div class="hero__desc" data-intro>
+            <span>CIMBBA</span>
+            <p>Échographie, radiographie, laboratoire et consultations réunis sous un même toit. Du diagnostic au traitement, une seule équipe à vos côtés.</p>
+          </div>
+          <div class="hero__actions" data-intro>
+            <a class="btn" href="#rendez-vous" data-magnetic><span class="btn__label"><span>Prendre rendez-vous</span><span>Prendre rendez-vous</span></span><span class="btn__ico"><svg><use href="#i-arrow"/></svg></span></a>
+            <a class="btn btn--glass" href="tel:+2250708983813" data-magnetic><span class="btn__label"><span>07 08 98 38 13</span><span>Appeler maintenant</span></span><span class="btn__ico"><svg><use href="#i-phone"/></svg></span></a>
+          </div>
 
+          <div class="hero__bottom">
+            <a class="spin" href="#services" data-intro aria-label="Échographie et radiographie 24h/24 — voir nos services">
+              <svg viewBox="0 0 132 132" aria-hidden="true"><defs><path id="circ" d="M66,66 m-52,0 a52,52 0 1,1 104,0 a52,52 0 1,1 -104,0"/></defs><text><textPath href="#circ" textLength="320" lengthAdjust="spacing">Écho &amp; radio · 24h/24 · CIMBBA ·</textPath></text></svg>
+              <span class="spin__core"><svg><use href="#i-pulse"/></svg></span>
+            </a>
+            <div class="stats glass" data-intro>
+              <div class="stat"><strong data-count="24" data-suffix="h">24h</strong><span>Écho &amp; radio, 7j/7</span></div>
+              <div class="stat"><strong data-count="9">9</strong><span>Expertises médicales</span></div>
+              <div class="stat"><strong data-count="3">3</strong><span>Assureurs partenaires</span></div>
+              <div class="stat"><strong data-count="5">5</strong><span>Rayons au showroom</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Bandeau ======= -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span class="marquee__item">Échographie <svg><use href="#i-cross"/></svg></span>
+        <span class="marquee__item">Radiographie <svg><use href="#i-cross"/></svg></span>
+        <span class="marquee__item">Échodoppler <svg><use href="#i-cross"/></svg></span>
+        <span class="marquee__item">Laboratoire <svg><use href="#i-cross"/></svg></span>
+        <span class="marquee__item">Gynécologie <svg><use href="#i-cross"/></svg></span>
+        <span class="marquee__item">Pédiatrie <svg><use href="#i-cross"/></svg></span>
+      </div>
     </div>
-  </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero">
-    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
-
-      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
-
-      <div class="carousel-inner" role="listbox">
-
-        <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg)">
-          <div class="container">
-            <h2>Bienvenue au <span>Centre d'Imagerie Médico-Biologique de Bassam</span></h2>
-            <p>Nous sommes ravis de vous accueillir dans notre espace dédié à la santé et au bien-être. Notre centre d'immagerie réunit une équipe exceptionnelle de professionnels de la santé, tous animés par une passion profonde pour leur métier. Leur expertise chevronnée, forgée par des années d'expérience, est à votre service pour vous offrir des soins de la plus haute qualité.</p>
-            <a href="#about" class="btn-get-started scrollto">VOIR PLUS</a>
-          </div>
+    <!-- ======= Manifeste ======= -->
+    <section class="sec manifesto" style="padding-top:clamp(60px,8vw,110px)">
+      <div class="wrap">
+        <span class="tag" data-fade><i>(01)</i> Notre engagement</span>
+        <p class="manifesto__text" data-words>À Grand-Bassam, CIMBBA réunit l'imagerie <span class="pill-img"><img src="assets/img/stock/echo1.jpg" alt=""></span> le laboratoire <span class="pill-img"><img src="assets/img/stock/lab2.jpg" alt=""></span> et les consultations sous un même toit. Parce qu'un bon traitement commence toujours par un diagnostic juste <span class="pill-img"><img src="assets/img/stock/xray1.jpg" alt=""></span> posé vite, expliqué clairement.</p>
+        <div class="manifesto__foot">
+          <p class="lead" data-fade>Moins d'allers-retours, des résultats rapides, une équipe qui se parle : c'est ce qui change tout pour les patients, et pour les médecins qui nous les confient.</p>
+          <a class="link" href="a-propos.html" data-fade>Notre histoire <svg><use href="#i-right"/></svg></a>
         </div>
-
-        <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg)">
-          <div class="container">
-            <h2>Votre clinique sofistiquée</h2>
-            <p>Nos équipements de pointe sont conçus pour optimiser les diagnostics, personnaliser les traitements et garantir une expérience de soins exceptionnelle pour chaque patient. Avec notre technologie de pointe, nous franchissons de nouvelles frontières pour vous offrir des solutions de santé plus rapides, plus précises et plus efficaces.</p>
-            <a href="#about" class="btn-get-started scrollto">Read More</a>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg)">
-          <div class="container">
-            <h2>Un personel accueillant</h2>
-            <p>Notre personnel est bien plus qu'une équipe médicale ; nous sommes une famille engagée à prendre soin de vous. Chaque membre de notre équipe est animé par le désir sincère de vous aider, de répondre à vos questions et de vous mettre à l'aise à chaque étape de votre parcours de soins.</p>
-            <a href="#about" class="btn-get-started scrollto">Read More</a>
-          </div>
-        </div>
-
       </div>
+    </section>
 
-      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-      </a>
+    <div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 140" preserveAspectRatio="none"><path fill="currentColor" d="M0,140 L0,96 C300,150 640,10 1010,36 C1220,52 1360,22 1440,6 L1440,140 Z"/></svg></div>
 
-      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-      </a>
-
-    </div>
-  </section><!-- End Hero -->
-
-  <main id="main">
-
-    <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Nos Partenaires</h2>
-          <p>CIMBBA collabore avec des compagnies d'assurance et organismes de référence pour faciliter l'accès aux soins de nos patients.</p>
+    <!-- ======= Services : défilement horizontal ======= -->
+    <section class="hs" id="services">
+      <div class="hs__pin">
+        <div class="hs__head">
+          <div>
+            <span class="tag"><i>(02)</i> Nos expertises</span>
+            <h2 class="h2" data-split style="margin-top:18px">Neuf expertises. <span class="thin">Un seul lieu.</span></h2>
+          </div>
+          <div class="hs__progress mono"><span class="hs__num">01</span> / 09<div class="hs__bar"><i></i></div></div>
         </div>
-
-        <div class="row">
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-              <img src="assets/img/partenaire/axaassur.jpeg" alt="" class="img-fluid">
-              <h4 class="title"><a href="">AXA ASSURANCE</a></h4>
-              <p class="description">AXA Côte d’Ivoire aide ses clients à vivre confiants jour après jour, en les protégeant, en protégeant leurs familles et leurs biens contre les risques.</p>
+        <div class="hs__track">
+          <a class="svc" href="#rendez-vous">
+            <div class="film"><img src="assets/img/stock/echo1.jpg" alt="Examen d'échographie" loading="lazy"><span class="film__lbl film__lbl--tl">Série 01 · Écho</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
+            <span class="svc__badge">24H/24</span>
+            <div class="svc__body"><div class="svc__row"><h3>Échographie</h3><span class="svc__n">01</span></div><p>Abdominale, pelvienne, obstétricale, parties molles : un examen sûr et indolore, avec suivi de grossesse.</p></div>
+          </a>
+          <a class="svc" href="#rendez-vous">
+            <div class="film"><img src="assets/img/stock/xray2.jpg" alt="Médecins analysant une radiographie" loading="lazy"><span class="film__lbl film__lbl--tl">Série 02 · RX</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
+            <span class="svc__badge">24H/24</span>
+            <div class="svc__body"><div class="svc__row"><h3>Radiographie</h3><span class="svc__n">02</span></div><p>Os, poumons, articulations, sinus : des clichés nets, interprétés rapidement par nos spécialistes.</p></div>
+          </a>
+          <a class="svc" href="#rendez-vous">
+            <div class="film"><img src="assets/img/stock/echo2.jpg" alt="Appareil d'échodoppler" loading="lazy"><span class="film__lbl film__lbl--tl">Série 03 · Doppler</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
+            <div class="svc__body"><div class="svc__row"><h3>Échodoppler &amp; ECG</h3><span class="svc__n">03</span></div><p>Cœur, artères et veines, électrocardiogramme : pour dépister et suivre les maladies cardiovasculaires.</p></div>
+          </a>
+          <a class="svc" href="#rendez-vous">
+            <div class="film"><img src="assets/img/stock/lab3.jpg" alt="Microscope d'analyse cytologique" loading="lazy"><span class="film__lbl film__lbl--tl">Série 04 · Cyto</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
+            <div class="svc__body"><div class="svc__row"><h3>Microbiopsies</h3><span class="svc__n">04</span></div><p>Prélèvements et cytoponctions guidés par l'image, mini-invasifs, pour un diagnostic précis.</p></div>
+          </a>
+          <a class="svc" href="#rendez-vous">
+            <div class="film"><img src="assets/img/stock/lab2.jpg" alt="Tubes de prélèvement au laboratoire" loading="lazy"><span class="film__lbl film__lbl--tl">Série 05 · Labo</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
+            <div class="svc__body"><div class="svc__row"><h3>Laboratoire</h3><span class="svc__n">05</span></div><p>Hématologie, biochimie, sérologie, bilans prénataux et de santé : des résultats fiables, rendus vite.</p></div>
+          </a>
+          <a class="svc" href="#rendez-vous">
+            <div class="film"><img src="assets/img/stock/c-bp.jpg" alt="Prise de tension en consultation" loading="lazy"><span class="film__lbl film__lbl--tl">Série 06 · Consult.</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
+            <div class="svc__body"><div class="svc__row"><h3>Médecine générale</h3><span class="svc__n">06</span></div><p>Bilans de santé, maladies chroniques, et rhumatologie : arthrose, goutte, douleurs articulaires.</p></div>
+          </a>
+          <a class="svc" href="#rendez-vous">
+            <div class="film"><img src="assets/img/stock/mri3.jpg" alt="Médecins examinant des images cérébrales" loading="lazy"><span class="film__lbl film__lbl--tl">Série 07 · Cardio-Neuro</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
+            <div class="svc__body"><div class="svc__row"><h3>Cardiologie &amp; neurologie</h3><span class="svc__n">07</span></div><p>Hypertension, palpitations, maux de tête, vertiges : un avis spécialisé appuyé sur nos examens.</p></div>
+          </a>
+          <a class="svc" href="#rendez-vous">
+            <div class="film"><img src="assets/img/stock/preg.jpg" alt="Future maman tenant une échographie" loading="lazy"><span class="film__lbl film__lbl--tl">Série 08 · Gynéco</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
+            <div class="svc__body"><div class="svc__row"><h3>Gynécologie</h3><span class="svc__n">08</span></div><p>Suivi de grossesse, contraception, santé de la femme, avec échographie sur place.</p></div>
+          </a>
+          <a class="svc" href="#rendez-vous">
+            <div class="film"><img src="assets/img/stock/consult.jpg" alt="Médecin en consultation avec une enfant" loading="lazy"><span class="film__lbl film__lbl--tl">Série 09 · Pédiatrie</span><span class="film__lbl film__lbl--br">CIMBBA · GB</span></div>
+            <div class="svc__body"><div class="svc__row"><h3>Pédiatrie</h3><span class="svc__n">09</span></div><p>Croissance, vaccinations, maladies de l'enfant : un accueil bienveillant de la naissance à l'adolescence.</p></div>
+          </a>
+          <div class="svc svc--intro">
+            <span class="tag">Un doute ?</span>
+            <div>
+              <h3>Vous ne savez pas quel examen faire&nbsp;?</h3>
+              <p style="margin-top:16px">Appelez-nous avec votre ordonnance : on vous oriente et on vous dit comment vous préparer.</p>
             </div>
+            <a class="btn btn--light" href="tel:+2250708983813" data-magnetic style="align-self:flex-start"><span class="btn__label"><span>07 08 98 38 13</span><span>Appeler</span></span><span class="btn__ico"><svg><use href="#i-phone"/></svg></span></a>
           </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-              <img src="assets/img/partenaire/cnpsassur.jpeg" alt="" class="img-fluid">
-              <h4 class="title"><a href="">LA CNPS</a></h4>
-              <p class="description">Elle a pour objectif la gestion obligatoire du régime de protection sociale des travailleurs du secteur privé et assimilés et des travailleurs indépendants.</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-              <img src="assets/img/partenaire/grasavoyeassur.jpeg" alt="" class="img-fluid">
-              <h4 class="title"><a href="">GRAS SAVOYE WILLIS TOWERS WATSON</a></h4>
-              <p class="description">Conseil Intermédiation, Gestion santé pour Assurance Classique, Autofinancement et Mutuelle.</p>
-            </div>
-          </div>
-
-          <!-- <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-              <div class="icon"><i class="fas fa-dna"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-            </div>
-          </div> -->
-
         </div>
-
       </div>
-    </section><!-- End Featured Services Section -->
+    </section>
 
-    <!-- ======= Cta Section ======= -->
-    <section id="cta" class="cta">
-      <div class="container" data-aos="zoom-in">
-
-        <div class="text-center">
-          <h3>Vous êtes dans l'urgence? Vous avez besoins d'aide maintenant?</h3>
-          <p> Notre équipe dévouée et expérimentée est prête à agir instantanément pour répondre à vos besoins pressants. Ne laissez pas le temps jouer en votre défaveur, contactez CIMBBA dès maintenant.</p>
-          <a class="cta-btn scrollto" href="#appointment">Prendre un Rendez-vous</a>
+    <!-- ======= Avant / après ======= -->
+    <section class="sec" id="centre">
+      <div class="wrap">
+        <div class="ba-head">
+          <div>
+            <span class="tag"><i>(03)</i> Le centre</span>
+            <h2 class="h2" data-split style="margin-top:18px">CIMBBA <span class="thin">se transforme.</span></h2>
+          </div>
+          <p class="lead" data-fade>Nouvelle façade, nouvel accueil, salles d'attente repensées, signalétique claire : le centre entre dans une nouvelle ère. Glissez pour comparer.</p>
         </div>
-
+        <div class="ba" data-fade>
+          <img src="assets/img/new/facade-actuelle.jpg" alt="Façade actuelle de CIMBBA">
+          <img class="ba__after" src="assets/img/maquettes/facade.jpg" alt="Façade de CIMBBA après travaux (simulation)">
+          <span class="ba__tag ba__tag--l glass mono">Aujourd'hui</span>
+          <span class="ba__tag ba__tag--r glass mono">Après travaux</span>
+          <div class="ba__handle" role="slider" tabindex="0" aria-label="Comparer avant et après travaux" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span class="ba__knob"><svg><use href="#i-drag"/></svg></span></div>
+        </div>
       </div>
-    </section><!-- End Cta Section -->
+    </section>
 
-    <!-- ======= About Us Section ======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>A propos du Centre d'Imagerie Médico-Biologique de Bassam</h2>
-          <p>Le Centre d'Imagerie Médico-Biologique de Bassam est un établissement dédié à la santé et au bien-être de la communauté de Bassam et de ses environs. Fondé sur des principes d'excellence médicale, de technologie de pointe et de service à la clientèle exceptionnel, notre centre s'efforce de fournir des soins de santé de qualité supérieure dans un environnement accueillant et confortable.</p>
+    <!-- ======= Le nouveau CIMBBA : plongée dans la galerie ======= -->
+    <section class="zoom" id="nouveau">
+      <div class="zoom__pin">
+        <div class="zoom__intro">
+          <span class="tag"><i style="color:#9fb3d1">(04)</i> Le nouveau CIMBBA</span>
+          <h2 class="h2" style="margin-top:14px">Entrez.</h2>
         </div>
-
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-right">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>Notre Mission</h3>
-            <p class="fst-italic">
-              Notre mission est de fournir des services d'imagerie médicale et de biologie médicale de haute qualité.
-            </p>
-            <ul>
-              <li><i class="bi bi-check-circle"></i> Avec une attention particulière portée à la précision diagnostique.</li>
-              <li><i class="bi bi-check-circle"></i> La sécurité des patients et à la satisfaction des clients.</li>
-              <li><i class="bi bi-check-circle"></i> Des soins personnalisés et en veillant à ce qu'ils se sentent bien pris en charge à chaque étape de leur parcours de soins.</li>
-            </ul>
-            <p>
-              Nous sommes fiers de servir la communauté de Bassam et de ses environs, et nous sommes déterminés à être un partenaire de confiance dans votre parcours de santé. Que vous ayez besoin d'un examen d'imagerie médicale, 
-              d'analyses de laboratoire ou de conseils sur votre santé, nous sommes là pour vous aider.
-            </p>
-          </div>
+        <div class="zoom__item" style="left:5vw;top:16vh;width:14vw;height:19vw"><img src="assets/img/maquettes/hall-bienvenue.jpg" alt=""></div>
+        <div class="zoom__item" style="left:23vw;top:9vh;width:16vw;height:10.5vw"><img src="assets/img/maquettes/accueil-echo.jpg" alt=""></div>
+        <div class="zoom__item" style="left:61vw;top:9vh;width:17vw;height:10.5vw"><img src="assets/img/maquettes/facade-totem.jpg" alt=""></div>
+        <div class="zoom__item" style="left:81vw;top:20vh;width:15vw;height:10vw"><img src="assets/img/maquettes/showroom-interieur.jpg" alt=""></div>
+        <div class="zoom__item" style="left:4vw;top:63vh;width:17vw;height:11vw"><img src="assets/img/maquettes/attente-echo.jpg" alt=""></div>
+        <div class="zoom__item" style="left:24vw;top:75vh;width:13vw;height:9vw"><img src="assets/img/maquettes/entree-attente.jpg" alt=""></div>
+        <div class="zoom__item" style="left:63vw;top:74vh;width:15vw;height:10vw"><img src="assets/img/maquettes/escaliers.jpg" alt=""></div>
+        <div class="zoom__item" style="left:80vw;top:57vh;width:16vw;height:11vw"><img src="assets/img/maquettes/salle-attente-2.jpg" alt=""></div>
+        <div class="zoom__item zoom__item--c"><img src="assets/img/maquettes/salle-attente-1.jpg" alt="Future salle d'attente principale de CIMBBA"></div>
+        <div class="zoom__title">
+          <h2 class="h2">Des espaces pensés pour votre sérénité.</h2>
+          <p>Accueil lumineux, salles d'attente climatisées, parcours fléché jusqu'à votre examen : le centre tel qu'il sera à la fin des travaux.</p>
         </div>
-
+        <span class="zoom__note mono">Simulation 3D · projet d'aménagement</span>
       </div>
-    </section><!-- End About Us Section -->
+    </section>
 
-    <!-- ======= Counts Section ======= -->
-    <!-- <section id="counts" class="counts">
-      <div class="container" data-aos="fade-up">
-
-        <div class="row no-gutters">
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-            <div class="count-box">
-              <i class="fas fa-user-md"></i>
-              <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1" class="purecounter"></span>
-
-              <p><strong>Doctors</strong> consequuntur quae qui deca rode</p>
-              <a href="#">Find out more &raquo;</a>
-            </div>
+    <!-- ======= Parcours patient : tracé ECG ======= -->
+    <section class="sec sec--navy ecg-sec" id="parcours">
+      <div class="wrap">
+        <span class="tag"><i style="color:#9fb3d1">(05)</i> Votre parcours</span>
+        <h2 class="h2" data-split style="margin-top:18px">Cinq étapes, <span class="thin">un seul fil.</span></h2>
+        <div class="ecg">
+          <svg viewBox="0 0 1200 220" fill="none" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+            <path class="ecg__base" d="M0 140 L60 140 L74 124 L86 140 L106 140 L116 30 L128 196 L140 140 L164 140 L178 116 L194 140 L300 140 L314 124 L326 140 L346 140 L356 30 L368 196 L380 140 L404 140 L418 116 L434 140 L540 140 L554 124 L566 140 L586 140 L596 30 L608 196 L620 140 L644 140 L658 116 L674 140 L780 140 L794 124 L806 140 L826 140 L836 30 L848 196 L860 140 L884 140 L898 116 L914 140 L1020 140 L1034 124 L1046 140 L1066 140 L1076 30 L1088 196 L1100 140 L1124 140 L1138 116 L1154 140 L1200 140"/>
+            <path class="ecg__line" d="M0 140 L60 140 L74 124 L86 140 L106 140 L116 30 L128 196 L140 140 L164 140 L178 116 L194 140 L300 140 L314 124 L326 140 L346 140 L356 30 L368 196 L380 140 L404 140 L418 116 L434 140 L540 140 L554 124 L566 140 L586 140 L596 30 L608 196 L620 140 L644 140 L658 116 L674 140 L780 140 L794 124 L806 140 L826 140 L836 30 L848 196 L860 140 L884 140 L898 116 L914 140 L1020 140 L1034 124 L1046 140 L1066 140 L1076 30 L1088 196 L1100 140 L1124 140 L1138 116 L1154 140 L1200 140"/>
+            <circle class="ecg__dot" r="6" cx="0" cy="140"/>
+          </svg>
+          <div class="ecg__steps">
+            <div class="ecg__step"><span class="mono">Étape 01</span><h3>Accueil</h3><p>On vous reçoit, on vous oriente, on répond à vos questions.</p></div>
+            <div class="ecg__step"><span class="mono">Étape 02</span><h3>Enregistrement</h3><p>Ordonnance, assurance et consignes de préparation.</p></div>
+            <div class="ecg__step"><span class="mono">Étape 03</span><h3>Examen</h3><p>Réalisé au calme par un professionnel qui vous explique tout.</p></div>
+            <div class="ecg__step"><span class="mono">Étape 04</span><h3>Interprétation</h3><p>Lecture des images ou des analyses par nos spécialistes.</p></div>
+            <div class="ecg__step"><span class="mono">Étape 05</span><h3>Résultats</h3><p>Un compte rendu clair, remis vite, pour vous et votre médecin.</p></div>
           </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-            <div class="count-box">
-              <i class="far fa-hospital"></i>
-              <span data-purecounter-start="0" data-purecounter-end="26" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Departments</strong> adipisci atque cum quia aut numquam delectus</p>
-              <a href="#">Find out more &raquo;</a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-            <div class="count-box">
-              <i class="fas fa-flask"></i>
-              <span data-purecounter-start="0" data-purecounter-end="14" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Research Lab</strong> aut commodi quaerat. Aliquam ratione</p>
-              <a href="#">Find out more &raquo;</a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-            <div class="count-box">
-              <i class="fas fa-award"></i>
-              <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Awards</strong> rerum asperiores dolor molestiae doloribu</p>
-              <a href="#">Find out more &raquo;</a>
-            </div>
-          </div>
-
         </div>
-
-      </div>-->
-    </section><!-- End Counts Section -->
-
-    <!-- ======= Features Section ======= -->
-    <section id="features" class="features">
-      <div class="container" data-aos="fade-up">
-
-        <div class="row">
-          <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
-            <div class="icon-box mt-5 mt-lg-0">
-              <i class="bx bx-receipt"></i>
-              <h4>Imagerie Médicale</h4>
-              <p> Nous disposons d'équipements de pointe pour réaliser une variété d'examens d'imagerie.</p>
-            </div>
-            <div class="icon-box mt-5">
-              <i class="bx bx-cube-alt"></i>
-              <h4>Biologie Médicale</h4>
-              <p>Notre laboratoire de biologie médicale est équipé des dernières technologies pour effectuer une gamme étendue d'analyses et de tests</p>
-            </div>
-            <div class="icon-box mt-5">
-              <i class="bx bx-images"></i>
-              <h4>Imagerie Interventionnelle</h4>
-              <p>une spécialité médicale qui utilise l'imagerie en temps réel pour guider des procédures médicales mini-invasives.</p>
-            </div>
-          </div>
-          <div class="image col-lg-6 order-1 order-lg-2" style='background-image: url("assets/img/features.jpg");' data-aos="zoom-in"></div>
-        </div>
-
       </div>
-    </section><!-- End Features Section -->
+    </section>
 
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services services">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>Au Centre d'Imagerie Médico-Biologique de Bassam, nous offrons une gamme complète de services pour répondre aux besoins de nos patients. Nos services comprennent :</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon"><i class="fas fa-heartbeat"></i></div>
-            <h4 class="title"><a href="">Radiographie</a></h4>
-            <p class="description">la radiographie est un outil précieux pour diagnostiquer les fractures, les infections, les tumeurs et d'autres conditions médicales.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon"><i class="fas fa-pills"></i></div>
-            <h4 class="title"><a href="">Échographie</a></h4>
-            <p class="description">Notre équipe utilise l'échographie pour produire des images en temps réel les problèmes de grossesse, les anomalies abdominales, etc.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon"><i class="fas fa-hospital-user"></i></div>
-            <h4 class="title"><a href="">Electrocardiogrammes (ECG)</a></h4>
-            <p class="description">Notre centre propose également des électrocardiogrammes (ECG) pour évaluer la fonction cardiaque de nos patients. </p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon"><i class="fas fa-dna"></i></div>
-            <h4 class="title"><a href="">Laboratoire</a></h4>
-            <p class="description">Notre laboratoire réalise des analyses biologiques complètes (hématologie, biochimie, sérologie) avec des résultats fiables et rapides.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon"><i class="fas fa-wheelchair"></i></div>
-            <h4 class="title"><a href="">Rhumatologie</a></h4>
-            <p class="description">En plus de nos services d'imagerie médicale et de biologie médicale, nous proposons également des analyses spécialisées dans le domaine de la rhumatologie.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon"><i class="fas fa-notes-medical"></i></div>
-            <h4 class="title"><a href="">Gynecologie</a></h4>
-            <p class="description">Nous offrons des consultations en gynécologie pour répondre aux besoins spécifiques des femmes en matière de santé reproductive et génésique. </p>
+    <!-- ======= L'équipe ======= -->
+    <section class="sec">
+      <div class="wrap split">
+        <a href="a-propos.html" class="film portrait" data-reveal>
+          <img src="assets/img/stock/c-tab.jpg" alt="Deux soignants de l'équipe consultent un dossier sur tablette" loading="lazy">
+          <span class="film__lbl film__lbl--tl">Équipe médicale</span>
+          <span class="film__lbl film__lbl--br">CIMBBA · 2026</span>
+        </a>
+        <div>
+          <span class="tag" data-fade><i>(06)</i> Ceux qui font CIMBBA</span>
+          <p class="quote" data-split style="margin-top:30px">Un bon traitement commence toujours par un diagnostic juste.</p>
+          <div class="sign" data-fade><span><b>La direction de CIMBBA</b><small>Centre d'Imagerie Médico-Biologique de Bassam</small></span></div>
+          <p class="lead" data-fade style="margin-top:30px">Radiologues, sonographes, biologistes, médecins, personnel d'accueil : découvrez celles et ceux qui font CIMBBA, leur parcours et ce qui les anime.</p>
+          <div style="margin-top:36px" data-fade>
+            <a class="btn" href="a-propos.html" data-magnetic><span class="btn__label"><span>Rencontrer l'équipe</span><span>Rencontrer l'équipe</span></span><span class="btn__ico"><svg><use href="#i-arrow"/></svg></span></a>
           </div>
         </div>
-
       </div>
-    </section><!-- End Services Section -->
+    </section>
 
-    <!-- ======= Appointment Section ======= -->
-    <section id="appointment" class="appointment section-bg">
-      <div class="container" data-aos="fade-up">
+    <!-- ======= Showroom ======= -->
+    <section class="sec" style="padding-top:0">
+      <div class="wrap">
+        <div class="sr-teaser split" data-fade>
+          <div style="position:relative;z-index:1">
+            <span class="tag" style="color:var(--scan)"><i style="color:#c8d6ec">(07)</i> Nouveau · Showroom</span>
+            <h2 class="h2" data-split style="margin-top:18px">Le matériel médical, <span class="thin">conseillé par des soignants.</span></h2>
+            <p class="lead" style="margin-top:24px">Tensiomètres, fauteuils roulants, lits médicalisés, équipements de cabinet et consommables : pour les familles comme pour les cliniques.</p>
+            <div class="sr-teaser__cats"><span>Matériel médical</span><span>Équipements hospitaliers</span><span>Aides à la mobilité</span><span>Mobilier médical</span><span>Consommables</span></div>
+            <a class="btn btn--light" href="showroom.html" data-magnetic><span class="btn__label"><span>Visiter le showroom</span><span>Visiter le showroom</span></span><span class="btn__ico"><svg><use href="#i-arrow"/></svg></span></a>
+          </div>
+          <div class="fan" aria-hidden="true">
+            <div class="fan__card"><img src="assets/img/stock/bp1.jpg" alt=""><div><small>Matériel médical</small><b>Tensiomètre électronique</b></div></div>
+            <div class="fan__card"><img src="assets/img/stock/wc1.jpg" alt=""><div><small>Mobilité</small><b>Fauteuil roulant pliant</b></div></div>
+            <div class="fan__card"><img src="assets/img/stock/bed3.jpg" alt=""><div><small>Mobilier</small><b>Lit médicalisé électrique</b></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="section-title">
-          <h2>Prendre un Rendez-vous</h2>
-          <p>Notre équipe dévouée et expérimentée est prête à agir instantanément pour répondre à vos besoins pressants. Ne laissez pas le temps jouer en votre défaveur, contactez CIMBBA dès maintenant.</p>
+    <!-- ======= Assurances ======= -->
+    <section class="sec sec--ice" style="padding:clamp(80px,9vw,130px) 0">
+      <div class="wrap">
+        <div class="ba-head">
+          <div>
+            <span class="tag"><i>(08)</i> Assurances</span>
+            <h2 class="h2" data-split style="margin-top:18px">Votre prise en charge, <span class="thin">simplifiée.</span></h2>
+          </div>
+          <p class="lead" data-fade>Nous travaillons avec les principaux assureurs et organismes. Pensez à apporter votre carte et votre bon de prise en charge.</p>
+        </div>
+        <div class="partners">
+          <div class="partner" data-fade><img src="assets/img/partenaire/axaassur.jpeg" alt="Logo AXA" loading="lazy"><div><h3>AXA Côte d'Ivoire</h3><p>Prise en charge de vos examens selon votre contrat.</p></div></div>
+          <div class="partner" data-fade data-delay="1"><img src="assets/img/partenaire/cnpsassur.jpeg" alt="Logo CNPS" loading="lazy"><div><h3>CNPS</h3><p>Pour les travailleurs du secteur privé et indépendants.</p></div></div>
+          <div class="partner" data-fade data-delay="2"><img src="assets/img/partenaire/grasavoyeassur.jpeg" alt="Logo Gras Savoye" loading="lazy"><div><h3>Gras Savoye WTW</h3><p>Gestion santé, assurance classique et mutuelles.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Rendez-vous ======= -->
+    <section class="sec" id="rendez-vous">
+      <div class="wrap contact">
+        <div>
+          <span class="tag"><i>(09)</i> Rendez-vous</span>
+          <h2 class="h2" data-split style="margin-top:18px">Prenons soin <span class="thin">de vous.</span></h2>
+          <p class="lead" data-fade style="margin-top:24px">Envoyez votre demande : nous vous rappelons pour confirmer le créneau et vous indiquer la préparation éventuelle.</p>
+          <div class="bignum" data-fade>
+            <a class="link" href="tel:+2250708983813"><small>Mobile</small>07 08 98 38 13</a>
+            <a class="link" href="tel:+2252721301413"><small>Fixe</small>27 21 30 14 13</a>
+            <a class="link" href="tel:+2250564970885"><small>Mobile</small>05 64 97 08 85</a>
+          </div>
+          <ul class="info-list" data-fade>
+            <li><span class="mono">Adresse</span><span>Immeuble Anthony Kangah, BP 276 Grand-Bassam</span></li>
+            <li><span class="mono">Horaires</span><span>Lun – Ven 08h – 18h · Sam 08h – 14h</span></li>
+            <li><span class="mono">E-mail</span><a href="mailto:infos.cimbba@gmail.com">infos.cimbba@gmail.com</a></li>
+          </ul>
+          <div class="urgent" data-fade>
+            <span class="urgent__pulse"><svg><use href="#i-pulse"/></svg></span>
+            <div><b>Échographie &amp; radiographie 24h/24</b><small>En cas d'urgence, appelez directement le 07 08 98 38 13.</small></div>
+          </div>
         </div>
 
-        <form action="https://api.web3forms.com/submit" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
-          <input type="hidden" name="access_key" value="22a340c6-c098-4c7d-a2a0-a2d2ca713986">
-          <input type="hidden" name="subject" value="Nouveau rendez-vous en ligne - CIMBBA">
-          <input type="hidden" name="from_name" value="Site CIMBBA - Prise de rendez-vous">
-          <div class="row">
-            <div class="col-md-4 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Nom et prénoms" required>
+        <div class="form-card" data-fade>
+          <h3>Demande de rendez-vous</h3>
+          <p class="muted">Réponse sous 24h ouvrées · champs * obligatoires</p>
+          <form class="form" action="https://api.web3forms.com/submit" method="post" data-web3 data-success="Merci ! Votre demande a bien été envoyée. Nous vous rappelons rapidement pour confirmer.">
+            <input type="hidden" name="access_key" value="22a340c6-c098-4c7d-a2a0-a2d2ca713986">
+            <input type="hidden" name="subject" value="Nouveau rendez-vous en ligne - CIMBBA">
+            <input type="hidden" name="from_name" value="Site CIMBBA - Prise de rendez-vous">
+            <input type="checkbox" name="botcheck" class="sr-only" tabindex="-1" autocomplete="off">
+            <div class="row2">
+              <div class="fl"><input id="f-name" name="name" required autocomplete="name" placeholder=" "><label for="f-name">Nom et prénoms *</label></div>
+              <div class="fl"><input id="f-tel" name="phone" type="tel" required autocomplete="tel" placeholder=" "><label for="f-tel">Téléphone *</label></div>
             </div>
-            <div class="col-md-4 form-group mt-3 mt-md-0">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Adressse mail" required>
+            <div class="row2">
+              <div class="fl"><input id="f-mail" name="email" type="email" autocomplete="email" placeholder=" "><label for="f-mail">E-mail</label></div>
+              <div class="fl"><input id="f-date" name="date" type="date" required data-min-today><label for="f-date">Date souhaitée *</label></div>
             </div>
-            <div class="col-md-4 form-group mt-3 mt-md-0">
-              <input type="tel" class="form-control" name="phone" id="phone" placeholder="Numéro de télephone" required>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4 form-group mt-3">
-              <input type="text" name="date" class="form-control datepicker" id="date" placeholder="Date du rendez-vous" required>
-            </div>
-            <div class="col-md-4 form-group mt-3">
-              <select name="department" id="department" class="form-select">
-                <option value="">Choisir le départemnt</option>
-                <option value="Department 1">Department de radiologie</option>
-                <option value="Department 2">Department d'échographie</option>
-                <option value="Department 3">Department de rhumatologie</option>
-                <option value="Department 3">Department d'électrocardiogrammes</option>
+            <div class="fl fl--select">
+              <select id="f-svc" name="service" required>
+                <option value="">Choisir…</option>
+                <optgroup label="Imagerie">
+                  <option>Échographie</option>
+                  <option>Radiographie</option>
+                  <option>Échodoppler cardiaque / vasculaire</option>
+                  <option>Électrocardiogramme (ECG)</option>
+                  <option>Microbiopsie / cytoponction</option>
+                </optgroup>
+                <optgroup label="Laboratoire"><option>Analyses biologiques</option></optgroup>
+                <optgroup label="Consultations">
+                  <option>Médecine générale</option>
+                  <option>Rhumatologie</option>
+                  <option>Cardiologie</option>
+                  <option>Neurologie</option>
+                  <option>Gynécologie</option>
+                  <option>Pédiatrie</option>
+                </optgroup>
+                <option>Autre / je ne sais pas</option>
               </select>
+              <label for="f-svc">Examen ou consultation *</label>
             </div>
-            <div class="col-md-4 form-group mt-3">
-              <select name="doctor" id="doctor" class="form-select">
-                <option value="">Choisirvotre docteur</option>
-                <option value="Doctor 1">Doctor 1</option>
-                <option value="Doctor 2">Doctor 2</option>
-                <option value="Doctor 3">Doctor 3</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group mt-3">
-            <textarea class="form-control" name="message" rows="5" placeholder="Expliquez nous le moftif du rendez-vous (Facultatif)"></textarea>
-          </div>
-          <div class="my-3">
-            <div class="loading">En cours</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Votre demande de rendez-vous a été envoyée avec succès. Merci!</div>
-          </div>
-          <div class="text-center"><button type="submit">Valider mon rendez-vous</button></div>
-        </form>
-
+            <div class="fl"><textarea id="f-msg" name="message" placeholder=" "></textarea><label for="f-msg">Motif, ordonnance, préférence d'horaire…</label></div>
+            <div class="status" role="status" aria-live="polite"></div>
+            <button class="btn" type="submit" data-magnetic><span class="btn__label"><span>Envoyer ma demande</span><span>Envoyer ma demande</span></span><span class="btn__ico"><svg><use href="#i-arrow"/></svg></span></button>
+            <p class="legal">Vos informations servent uniquement à organiser votre rendez-vous.</p>
+          </form>
+        </div>
       </div>
-    </section><!-- End Appointment Section -->
+    </section>
 
-    <!-- ======= Departments Section ======= -->
-    <section id="departments" class="departments">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Départments</h2>
-          <p>Découvrez les différentes spécialités médicales prises en charge au sein de notre centre.</p>
-        </div>
-
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-4 mb-5 mb-lg-0">
-            <ul class="nav nav-tabs flex-column">
-              <li class="nav-item">
-                <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
-                  <h4>Cardiologie</h4>
-                  <p>La cardiologie est la branche de la médecine qui traite des maladies du cœur et des vaisseaux sanguins.</p>
-                </a>
-              </li>
-              <li class="nav-item mt-2">
-                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
-                  <h4>Neurologie</h4>
-                  <p>La neurologie est la discipline médicale qui se concentre sur le diagnostic et le traitement des troubles du système nerveux.</p>
-                </a>
-              </li>
-              <li class="nav-item mt-2">
-                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
-                  <h4>Rhumatologie</h4>
-                  <p>L'hépatologie est la spécialité médicale qui étudie et traite les maladies du foie, de la vésicule biliaire et des voies biliaires.</p>
-                </a>
-              </li>
-              <li class="nav-item mt-2">
-                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
-                  <h4>Pédiatrie</h4>
-                  <p>La pédiatrie est la branche de la médecine qui se concentre sur la santé et le bien-être des enfants, depuis la naissance jusqu'à l'adolescence.</p>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-lg-8">
-            <div class="tab-content">
-              <div class="tab-pane active show" id="tab-1">
-                <h3>Cardiologie</h3>
-                <p class="fst-italic">La cardiologie est la branche de la médecine qui se consacre à l'étude, au diagnostic et au traitement des maladies du cœur et des vaisseaux sanguins.</p>
-                <img src="assets/img/departments-1.jpg" alt="" class="img-fluid">
-                <p>Les cardiologues sont des spécialistes qualifiés dans la prise en charge des affections cardiovasculaires, 
-                  telles que l'angine de poitrine, l'infarctus du myocarde, l'hypertension artérielle, les arythmies cardiaques, 
-                  les malformations cardiaques congénitales et l'insuffisance cardiaque. En utilisant des techniques sophistiquées telles 
-                  que l'électrocardiographie (ECG), l'échocardiographie, la coronarographie et l'imagerie par résonance magnétique cardiaque, 
-                  les cardiologues sont en mesure d'évaluer la structure et la fonction du cœur, d'identifier les anomalies et de recommander 
-                  des traitements appropriés, y compris des médicaments, des interventions chirurgicales et des programmes de réadaptation 
-                  cardiaque. En outre, les cardiologues jouent un rôle essentiel dans la promotion de modes de vie sains et la prévention 
-                  des maladies cardiovasculaires en conseillant leurs patients sur l'exercice, la nutrition et la gestion du stress.
-                </p>
-              </div>
-              <div class="tab-pane" id="tab-2">
-                <h3>Neurologie</h3>
-                <p class="fst-italic">La neurologie est une spécialité médicale axée sur l'étude et le traitement des troubles du système nerveux central et périphérique.</p>
-                <img src="assets/img/departments-2.jpg" alt="" class="img-fluid">
-                <p> Les neurologues sont formés pour diagnostiquer et gérer un large éventail de conditions neurologiques, notamment les maladies dégénératives telles 
-                  que la maladie d'Alzheimer et la maladie de Parkinson, les troubles épileptiques, les accidents vasculaires cérébraux, les maux de tête 
-                  chroniques, les troubles du sommeil, les tumeurs cérébrales et les blessures à la moelle épinière. Grâce à des techniques avancées 
-                  d'imagerie cérébrale, de tests neurophysiologiques et de consultations spécialisées, les neurologues sont en mesure d'offrir des soins 
-                  précis et personnalisés à leurs patients, tout en travaillant souvent en collaboration avec d'autres spécialistes, tels que les 
-                  neurochirurgiens et les physiothérapeutes, pour assurer une approche globale et intégrée du traitement.</p>
-              </div>
-              <div class="tab-pane" id="tab-3">
-                <h3>Rhumatologie</h3>
-                <p class="fst-italic">La rhumatologie est une spécialité médicale qui se concentre sur le diagnostic et le traitement des maladies et des troubles affectant les articulations, les os, les muscles et les tissus conjonctifs.</p>
-                <img src="assets/img/departments-3.jpg" alt="" class="img-fluid">
-                <p>Les rhumatologues sont des médecins spécialisés dans la gestion des affections telles que l'arthrite rhumatoïde, 
-                  l'ostéoarthrite, la spondylarthrite ankylosante, le lupus érythémateux systémique, la fibromyalgie, 
-                  la goutte et d'autres formes d'arthrite inflammatoire ou auto-immune. Ils utilisent une combinaison d'examens cliniques, 
-                  d'imagerie médicale, de tests sanguins et parfois de biopsies pour évaluer les symptômes et établir un plan de traitement 
-                  adapté à chaque patient. En plus de la gestion médicamenteuse, les rhumatologues peuvent recommander des thérapies physiques,
-                   des exercices et des changements de mode de vie pour aider à réduire la douleur, 
-                  à améliorer la mobilité et à prévenir les complications à long terme des maladies rhumatismales.</p>
-              </div>
-              <div class="tab-pane" id="tab-4">
-                <h3>Pédiatrie</h3>
-                <p class="fst-italic">La pédiatrie est une spécialité médicale dédiée à la santé et au bien-être des nourrissons, des enfants et des adolescents.</p>
-                <img src="assets/img/departments-4.jpg" alt="" class="img-fluid">
-                <p>Les pédiatres sont formés pour diagnostiquer, traiter et prévenir une large gamme de problèmes de santé spécifiques à ces groupes d'âge. 
-                  Leur expertise couvre des domaines tels que le développement physique et mental, les maladies infantiles courantes, les vaccinations, 
-                  les troubles du comportement et de l'apprentissage, ainsi que les problèmes de croissance et de développement. En collaborant étroitement 
-                  avec les parents et les tuteurs légaux, les pédiatres s'efforcent de fournir des soins complets et holistiques aux jeunes patients, 
-                  en mettant l'accent sur la promotion d'un mode de vie sain dès le plus jeune âge.</p>
-              </div>
-            </div>
+    <!-- ======= FAQ ======= -->
+    <section class="sec" id="faq" style="padding-top:0">
+      <div class="wrap">
+        <div class="ba-head">
+          <div>
+            <span class="tag"><i>(10)</i> Questions fréquentes</span>
+            <h2 class="h2" data-split style="margin-top:18px">Bon à savoir <span class="thin">avant de venir.</span></h2>
           </div>
         </div>
-
+        <div class="faq" data-fade>
+          <div class="faq__item is-open">
+            <button class="faq__q" aria-expanded="true"><span class="mono">01</span><span>Quels sont vos horaires ?</span><span class="faq__x"></span></button>
+            <div class="faq__a"><p>Du lundi au vendredi de 08h à 18h et le samedi de 08h à 14h. L'échographie et la radiographie sont assurées 24h/24 : appelez le 07 08 98 38 13 en dehors des horaires.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false"><span class="mono">02</span><span>Comment prendre rendez-vous ?</span><span class="faq__x"></span></button>
+            <div class="faq__a"><p>En ligne via le formulaire ci-dessus, par téléphone au 27 21 30 14 13 ou au 07 08 98 38 13, sur WhatsApp, ou directement à l'accueil. Nous vous rappelons pour confirmer.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false"><span class="mono">03</span><span>Dois-je être à jeun pour mon examen ?</span><span class="faq__x"></span></button>
+            <div class="faq__a"><p>Cela dépend : certaines échographies abdominales et prises de sang demandent d'être à jeun, une échographie pelvienne demande la vessie pleine. On vous donne les consignes exactes à la confirmation.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false"><span class="mono">04</span><span>Acceptez-vous les assurances ?</span><span class="faq__x"></span></button>
+            <div class="faq__a"><p>Oui, notamment AXA, la CNPS et Gras Savoye. Munissez-vous de votre carte d'assurance et de votre bon de prise en charge.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false"><span class="mono">05</span><span>Quels moyens de paiement acceptez-vous ?</span><span class="faq__x"></span></button>
+            <div class="faq__a"><p>Espèces, carte bancaire et mobile money. Contactez-nous pour toute question sur le règlement.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false"><span class="mono">06</span><span>Puis-je acheter du matériel médical chez vous ?</span><span class="faq__x"></span></button>
+            <div class="faq__a"><p>Oui : notre showroom propose tensiomètres, fauteuils roulants, lits médicalisés, consommables et équipements pour professionnels. <a class="link" href="showroom.html">Voir le catalogue</a></p></div>
+          </div>
+        </div>
       </div>
-    </section><!-- End Departments Section -->
+    </section>
 
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Avis de certains patients</h2>
-          <p></p>
+    <!-- ======= Plan ======= -->
+    <section class="sec" style="padding-top:0">
+      <div class="wrap">
+        <div class="map" data-reveal>
+          <iframe title="Plan d'accès CIMBBA Grand-Bassam" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1986.6652924146063!2d-3.7373339648291433!3d5.210642148266239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc203c7c8038b03%3A0xa448d89620e4583d!2sCIMBBA%20Centre%20d&#39;Imagerie%20M%C3%A9dico-Biologique%20de%20Bassam!5e0!3m2!1sfr!2sci!4v1708704973634!5m2!1sfr!2sci" allowfullscreen></iframe>
         </div>
-
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Je suis très reconnaissant envers l'équipe de pédiatrie pour leur attention et leur dévouement envers mon enfant. Ils ont su instaurer un climat de confiance, ce qui a facilité le processus de traitement. Je recommande vivement ce service à tous les parents."
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>KOFFI KONAN</h3>
-                <h4>Patient &amp;</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  La clinique CIMBBA dispose d'équipements modernes et de technologies de pointe, ce qui m'a donné confiance dans les soins que j'ai reçus. De plus, les espaces sont aménagés de manière à offrir un maximum de confort aux patients, ce qui rend les visites beaucoup plus agréables.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>SONIA KOUASSI</h3>
-                <h4>Patiente</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Travailler à CIMBBA est une expérience enrichissante. L'équipe est composée de professionnels dévoués et compétents, ce qui favorise un apprentissage continu et une croissance professionnelle. La clinique offre également d'excellentes possibilités de formation et de développement.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>MOHAMED SIDIBE</h3>
-                <h4>personel</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Je suis très satisfait des soins que j'ai reçus en cardiologie. L'équipe médicale a été très professionnelle et empathique tout au long de mon parcours de traitement. Grâce à leur expertise, j'ai pu retrouver une meilleure qualité de vie. Je recommande fortement ce service à quiconque a des problèmes cardiaques.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Yves Kouamé</h3>
-                <h4>Patient</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Notre partenariat avec le Centre Médical-Biologique de Grand-Bassam a été extrêmement fructueux. Leur équipe est professionnelle, bien organisée et toujours prête à collaborer pour offrir des soins de qualité à nos patients communs. C'est un plaisir de travailler avec une clinique aussi engagée et soucieuse du bien-être des patients.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Ibrahim Coulibaly</h3>
-                <h4>Partenaire AXA</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
       </div>
-    </section><!-- End Testimonials Section -->
+    </section>
 
-    <!-- ======= Doctors Section ======= -->
-    <section id="doctors" class="doctors section-bg">
-      <div class="container" data-aos="fade-up">
+  </main>
 
-        <div class="section-title">
-          <h2>Nos Médecins</h2>
-          <p>Les Médecins qui participent au bien bien-êtrede tous nos patients.</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="100">
-              <div class="member-img">
-                <img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="member-info">
-                <h4>Dr Kouassi Yao</h4>
-                <span>Chef du departement medical</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="200">
-              <div class="member-img">
-                <img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="member-info">
-                <h4>Aya Konan</h4>
-                <span>Infirmière</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="300">
-              <div class="member-img">
-                <img src="assets/img/doctors/doctors-3.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="member-info">
-                <h4>Dr Mamadou Diabaté</h4>
-                <span>Cardiologue</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="400">
-              <div class="member-img">
-                <img src="assets/img/doctors/doctors-4.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="member-info">
-                <h4>Dr Adjoua Bamba</h4>
-                <span>Neurologue</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
+  <!-- ======= Pied de page ======= -->
+  <footer class="ftr">
+    <div class="wrap">
+      <div class="ftr__cta">
+        <h2 class="h2" data-split>Une question ? <span class="thin">Parlons-en.</span></h2>
+        <a class="btn btn--light" href="https://wa.me/2250708983813" target="_blank" rel="noopener" data-magnetic><span class="btn__label"><span>Écrire sur WhatsApp</span><span>Écrire sur WhatsApp</span></span><span class="btn__ico"><svg><use href="#i-whatsapp"/></svg></span></a>
       </div>
-    </section><!-- End Doctors Section -->
-
-    <!-- ======= Gallery Section ======= -->
-    <section id="gallery" class="gallery">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Gallery</h2>
-          <p>Cetaines images des moments fort de CIMBBA.</p>
-        </div>
-
-        <div class="gallery-slider swiper">
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-1.jpg"><img src="assets/img/gallery/gallery-1.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-2.jpg"><img src="assets/img/gallery/gallery-2.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-3.jpg"><img src="assets/img/gallery/gallery-3.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-4.jpg"><img src="assets/img/gallery/gallery-4.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-5.jpg"><img src="assets/img/gallery/gallery-5.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-6.jpg"><img src="assets/img/gallery/gallery-6.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/gallery/gallery-7.jpg"><img src="assets/img/gallery/gallery-7.jpg" class="img-fluid" alt=""></a></div>
+      <div class="ftr__grid">
+        <div>
+          <a href="index.html" class="logo"><span class="logo__mark"><img src="assets/img/new/logo-mark.png" alt=""></span><span><span class="logo__name">CIMBBA</span><span class="logo__sub">Imagerie · Biologie</span></span></a>
+          <p class="ftr__about">Du diagnostic au traitement. Imagerie, laboratoire, consultations et matériel médical à Grand-Bassam.</p>
+          <div class="ftr__social">
+            <a href="https://www.facebook.com/cimbba.cimbba" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#i-facebook"/></svg></a>
+            <a href="https://wa.me/2250708983813" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-whatsapp"/></svg></a>
           </div>
-          <div class="swiper-pagination"></div>
         </div>
-
-      </div>
-    </section><!-- End Gallery Section -->
-
-    <!-- ======= Frequently Asked Questioins Section ======= -->
-    <section id="faq" class="faq section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Questions Fréquemment Posées</h2>
-          <p></p>
+        <div>
+          <h4>Le centre</h4>
+          <ul>
+            <li><a href="#services">Nos expertises</a></li>
+            <li><a href="#centre">Le nouveau CIMBBA</a></li>
+            <li><a href="#parcours">Votre parcours</a></li>
+            <li><a href="#faq">Questions fréquentes</a></li>
+          </ul>
         </div>
-
-        <ul class="faq-list">
-
-          <li>
-            <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">Q : Quels sont les horaires d'ouverture de la clinique ? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-            <div id="faq1" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                R : La clinique est ouverte du lundi au vendredi de 8h00 à 18h00, et le samedi de 8h00 à 12h00. Veuillez noter que les horaires peuvent varier pendant les jours fériés, veuillez vérifier notre site web pour les mises à jour.
-              </p>
-            </div>
-          </li>
-
-          <li>
-            <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">Q : Comment puis-je prendre rendez-vous ? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-            <div id="faq2" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                R : Vous pouvez prendre rendez-vous en ligne via notre site web en remplissant le formulaire de rendez-vous, ou en nous appelant au numéro indiqué sur la page de contact. Notre équipe se fera un plaisir de vous aider à planifier votre visite.
-              </p>
-            </div>
-          </li>
-
-          <li>
-            <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">Q : Quels types de services médicaux offrez-vous ? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-            <div id="faq3" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                R : Nous offrons une gamme complète de services médicaux dans divers domaines, y compris la pédiatrie, la cardiologie, la neurologie, l'hépatologie et la rhumatologie. Pour plus d'informations sur nos services, veuillez consulter la section "Nos Services" de notre site web.
-              </p>
-            </div>
-          </li>
-
-          <li>
-            <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">Q : Quelles mesures prenez-vous pour assurer la sécurité des patients pendant la pandémie de COVID-19 ? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-            <div id="faq4" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                R : Nous avons mis en place des protocoles stricts de désinfection et de distanciation sociale pour assurer la sécurité de nos patients et de notre personnel. Cela comprend le port obligatoire de masques, la désinfection fréquente des surfaces et la limitation du nombre de personnes dans la clinique à tout moment. Pour plus de détails sur nos mesures COVID-19, veuillez consulter notre page dédiée sur notre site web.
-              </p>
-            </div>
-          </li>
-
-          <li>
-            <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">Q : Acceptez-vous les assurances médicales ? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-            <div id="faq5" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                R : Oui, nous acceptons la plupart des assurances médicales. Veuillez vérifier auprès de votre fournisseur d'assurance pour connaître la couverture spécifique de votre plan. Nous sommes également heureux de vous aider à comprendre vos prestations d'assurance et à traiter les réclamations.
-              </p>
-            </div>
-          </li>
-
-          <li>
-            <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">Q : Quels sont les modes de paiement acceptés ? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-            <div id="faq6" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                R : Nous acceptons les paiements en espèces, par carte de crédit et par mobile monney. Nous offrons également des options de paiement flexibles, y compris des plans de paiement échelonnés pour les patients admissibles. Pour plus d'informations sur les options de paiement, veuillez nous contacter directement.
-              </p>
-            </div>
-          </li>
-
-        </ul>
-
-      </div>
-    </section><!-- End Frequently Asked Questioins Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p></p>
+        <div>
+          <h4>Explorer</h4>
+          <ul>
+            <li><a href="a-propos.html">À propos &amp; équipe</a></li>
+            <li><a href="showroom.html">Showroom matériel</a></li>
+            <li><a href="#rendez-vous">Prendre rendez-vous</a></li>
+          </ul>
         </div>
-
-      </div>
-
-      <div>
-        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1986.6652924146063!2d-3.7373339648291433!3d5.210642148266239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc203c7c8038b03%3A0xa448d89620e4583d!2sCIMBBA%20Centre%20d&#39;Imagerie%20M%C3%A9dico-Biologique%20de%20Bassam!5e0!3m2!1sfr!2sci!4v1708704973634!5m2!1sfr!2sci" frameborder="0" allowfullscreen></iframe>
-      </div>
-
-      <div class="container">
-
-        <div class="row mt-5">
-
-          <div class="col-lg-6">
-
-            <div class="row">
-              <div class="col-md-12">
-                <div class="info-box">
-                  <i class="bx bx-map"></i>
-                  <h3>Notre Adressse</h3>
-                  <p>BP 276, Grand-Bassam, Immeuble Anthony Kangah</p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="info-box mt-4">
-                  <i class="bx bx-envelope"></i>
-                  <h3>Email</h3>
-                  <p>info.cimbba@gmail.com<br></p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="info-box mt-4">
-                  <i class="bx bx-phone-call"></i>
-                  <h3>Appelez-nous</h3>
-                  <p>+225 0708983813<br>+225 2721301413</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-lg-6">
-            <form action="https://api.web3forms.com/submit" method="post" role="form" class="php-email-form">
-              <input type="hidden" name="access_key" value="22a340c6-c098-4c7d-a2a0-a2d2ca713986">
-              <input type="hidden" name="from_name" value="Site CIMBBA - Formulaire de contact">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Nom et prénoms" required="">
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Votre mail" required="">
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Quelle est votre préocupation" required="">
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="7" placeholder="Laissez votre message ici" required=""></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Evoi en cours</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Votre méssage a été envoyée avec succès. Merci!</div>
-              </div>
-              <div class="text-center"><button type="submit">Envoyer mon méssage</button></div>
-            </form>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="footer-top text-center">
-      <div class="container">
-        <div class="row justify-content-center">
-    
-          <div class="col-lg-3 col-md-6">
-            <div class="footer-info">
-              <h3>CIMBBA</h3>
-              <p>
-                BP 276, Grand-Bassam,<br>
-                Immeuble Anthony Kangah<br><br>
-                <strong>Téléphone :</strong> +225 0708983813<br>
-                <strong>Email :</strong> info.cimbba@gmail.com<br>
-              </p>
-              <div class="social-links mt-3">
-                <a href="https://www.facebook.com/cimbba.cimbba" class="facebook"><i class="bx bxl-facebook"></i></a>
-              </div>
-            </div>
-          </div>
-    
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+2252721301413">27 21 30 14 13</a></li>
+            <li><a href="tel:+2250708983813">07 08 98 38 13</a></li>
+            <li><a href="tel:+2250564970885">05 64 97 08 85</a></li>
+            <li><a href="mailto:infos.cimbba@gmail.com">infos.cimbba@gmail.com</a></li>
+            <li>BP 276 Grand-Bassam</li>
+          </ul>
         </div>
       </div>
     </div>
-    
-
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>CIMBBA & CO</span></strong>.Tous droits réservés.
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medicio-free-bootstrap-theme/ -->
-        Designed by <a href="https://www.linkedin.com/in/cheick-sidibe27/">Cheick Sidibe</a>
+    <div class="ftr__word" aria-hidden="true">CIMBBA</div>
+    <div class="wrap">
+      <div class="ftr__bottom">
+        <span>© <span data-year>2026</span> CIMBBA SARL. Tous droits réservés.</span>
+        <span class="mono">5.2106° N · 3.7373° O</span>
+        <span>Conçu par <a href="https://www.linkedin.com/in/cheick-sidibe27/" target="_blank" rel="noopener">Cheick Sidibe</a></span>
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </footer>
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a class="wa" href="https://wa.me/2250708983813" target="_blank" rel="noopener" aria-label="Nous écrire sur WhatsApp"><svg><use href="#i-whatsapp"/></svg></a>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <!-- Envoi des formulaires (Web3Forms) -->
-  <script src="assets/js/web3forms.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+  <script src="assets/vendor/motion/gsap.min.js"></script>
+  <script src="assets/vendor/motion/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/motion/lenis.min.js"></script>
+  <script src="assets/js/cimbba.js"></script>
 </body>
-
 </html>
